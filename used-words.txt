@@ -1,0 +1,19 @@
+# Kevin Mandarin — words taught
+# Day 1 (2026-10-04): greetings and polite basics
+# Columns: Simplified Chinese, Hanyu Pinyin, English
+# Tone notes (verified for this lesson):
+#   你好 nǐ hǎo — both 3rd tone in citation form. In speech the first 3rd often rises (sounds like ní hǎo).
+#   谢谢 xièxie — second syllable is neutral, not a full 4th tone.
+#   不客气 bú kèqi — 不 is bù, but it changes to bú before the 4th tone of 客. 气 is neutral.
+#   对不起 duìbuqǐ — the middle 不 is neutral (not bú / bù).
+#   早上好 zǎoshang hǎo — in 早上 the 上 is usually neutral, not a full shàng.
+#   什么 shénme and 名字 míngzi — 么 and 子 are neutral.
+
+你好	nǐ hǎo	hello
+再见	zài jiàn	goodbye
+谢谢	xièxie	thank you
+不客气	bú kèqi	you're welcome
+对不起	duìbuqǐ	sorry
+请	qǐng	please
+早上好	zǎoshang hǎo	good morning
+你叫什么名字	nǐ jiào shénme míngzi	what's your name

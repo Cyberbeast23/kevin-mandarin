@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mandarin (Oct. 4): Greetings and polite basics</title>
+<style>
+  body{font-family:"Segoe UI",Verdana,Arial,sans-serif;font-size:20px;line-height:1.6;margin:0;background:#f5f0eb;color:#2c2416}
+  .wrap{max-width:880px;margin:0 auto;padding:20px 18px 80px}
+  a.home{font-size:.9em;color:#bf360c}
+  h1{color:#e65100;font-size:2em;margin:10px 0}
+  h2{color:#ef6c00;margin-top:36px;border-bottom:3px solid #ffcc80;padding-bottom:4px}
+  h3{color:#ef6c00}
+  .box{background:#fff;border-radius:16px;padding:18px 22px;margin:16px 0;box-shadow:0 3px 10px rgba(0,0,0,.07)}
+  .tipbox{background:#fff8e1;border-left:8px solid #ffb300}
+  .char{font-size:2.2em;font-weight:bold;color:#e65100;line-height:1.2}
+  .jyut{font-family:Consolas,"Courier New",monospace;background:#fff3e0;padding:2px 8px;border-radius:8px;font-size:1.05em}
+  .card{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;align-items:center;border-left:8px solid #ef6c00;padding-left:14px}
+  .card .meta{grid-column:2}
+  .ex{margin-top:8px;background:#fff3e0;border-radius:10px;padding:8px 12px;font-size:.95em}
+  .q{border-left:8px solid #b0bec5}
+  .q.right{border-left-color:#43a047;background:#f1f8e9}
+  .q.wrong{border-left-color:#e53935;background:#fff5f5}
+  .opt{display:block;width:100%;text-align:left;font-size:.95em;background:#fafafa;border:2px solid #e0e0e0;border-radius:10px;padding:8px 14px;margin:8px 0;cursor:pointer;font-family:inherit}
+  .opt:hover{border-color:#ffb74d;background:#fff}
+  .opt.sel-right{background:#c8e6c9;border-color:#43a047}
+  .opt.sel-wrong{background:#ffcdd2;border-color:#e53935}
+  .fb{margin-top:6px;font-weight:bold}
+  .fb.good{color:#2e7d32} .fb.bad{color:#c62828}
+  .explain{font-weight:normal;color:#e65100}
+  .vrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:8px 6px;border-bottom:1px dashed #eee}
+  .vrow .w{font-weight:bold;min-width:120px;font-size:1.3em}
+  .vrow.right{background:#f1f8e9} .vrow.wrong{background:#fff5f5}
+  select{font-size:.95em;padding:6px 8px;border-radius:8px;border:2px solid #ffb74d;max-width:100%;font-family:inherit}
+  .mark{font-size:1.2em;min-width:30px}
+  button.main{font-size:1em;padding:10px 20px;border:none;border-radius:10px;cursor:pointer;font-weight:bold;background:#ef6c00;color:#fff;margin-top:10px}
+  button.main:hover{background:#e65100}
+  input[type=text]{font-size:1.05em;padding:8px 12px;border:2px solid #ffb74d;border-radius:10px;width:min(100%,320px);font-family:inherit}
+  button.check{font-size:.95em;padding:8px 16px;border:none;border-radius:10px;cursor:pointer;font-weight:bold;background:#ef6c00;color:#fff}
+  .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px}
+  #scoreBox{position:sticky;bottom:0;background:#e65100;color:#fff;border-radius:16px 16px 0 0;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-top:30px}
+  #scoreBox button{font-size:.95em;padding:8px 16px;border:none;border-radius:10px;cursor:pointer;font-weight:bold;background:#ffca28;color:#3e2723}
+  #final{display:none;text-align:center;border:4px solid #43a047;font-size:1.1em}
+  .tone{font-size:.85em;color:#ef6c00}
+
+  .audio-bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:12px 0 4px}
+  button.speak,button.record,button.play-mine,button.play-model,button.audio-ctrl{
+    font-size:1.05em;padding:14px 18px;min-height:52px;min-width:52px;
+    border:none;border-radius:14px;cursor:pointer;font-weight:bold;font-family:inherit;
+    touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+  }
+  button.speak,button.play-model,button.audio-ctrl.hear{background:#ef6c00;color:#fff}
+  button.speak:hover,button.play-model:hover,button.audio-ctrl.hear:hover{background:#e65100}
+  button.speak.playing{background:#43a047}
+  button.record{background:#e53935;color:#fff}
+  button.record:hover{background:#c62828}
+  button.record.recording{background:#ffca28;color:#3e2723;animation:pulse 1s infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+  button.play-mine{background:#00897b;color:#fff}
+  button.play-mine:hover{background:#00695c}
+  button.play-mine:disabled{opacity:.45;cursor:not-allowed}
+  button.audio-ctrl.stop{background:#546e7a;color:#fff}
+  button.audio-ctrl.stop:hover{background:#37474f}
+  .practice{margin-top:14px;padding-top:12px;border-top:2px dashed #ffcc80}
+  .practice-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .rec-status{margin-top:8px;font-weight:bold;color:#ef6c00;font-size:.95em}
+  .rec-status.rec-on{color:#c62828}
+  .mic-msg{margin-top:8px;background:#fff3e0;border-left:6px solid #ef6c00;border-radius:10px;padding:10px 14px;font-size:.95em;color:#e65100}
+  .box[data-audio]{position:relative}
+  button.ex-hear{font-size:.85em;padding:8px 12px;min-height:44px;min-width:44px;margin-left:6px;vertical-align:middle}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="home" href="../../index.html">&larr; Back to all lessons</a>
+<h1>🗣️ Mandarin Day 1: Greetings and polite basics 问候</h1>
+<p>Kevin, this is lesson one. Eight everyday phrases: hello, goodbye, thanks, you're welcome, sorry, please, good morning, and asking someone's name. Characters are <strong>Simplified Chinese</strong>. The pronunciation line is <strong>Hanyu Pinyin</strong> with tone marks.</p>
+
+<div class="box tipbox">
+  <strong>How to read the tones:</strong>
+  <ul>
+    <li><strong>1st</strong> ā high and flat · <strong>2nd</strong> á rising · <strong>3rd</strong> ǎ dipping · <strong>4th</strong> à falling. <strong>No mark</strong> means a short, light (neutral) syllable.</li>
+    <li><strong>不 changes:</strong> <span class="jyut">bù</span> is said <span class="jyut">bú</span> right before a 4th tone, so 不客气 is <span class="jyut">bú kèqi</span>. In 对不起 the middle syllable is neutral: <span class="jyut">duìbuqǐ</span>.</li>
+    <li><strong>Two 3rd tones:</strong> 你好 is written <span class="jyut">nǐ hǎo</span>. In real speech the first one usually rises, so it can sound like <span class="jyut">ní hǎo</span>. Type the written form.</li>
+    <li><strong>Light syllables:</strong> 谢谢 <span class="jyut">xièxie</span>, 早上 <span class="jyut">zǎoshang</span> (上 is light, not a full <span class="jyut">shàng</span>), 什么 <span class="jyut">shénme</span>, 名字 <span class="jyut">míngzi</span>.</li>
+    <li><strong>Listen, then speak:</strong> Tap Hear model, say the phrase, then Record and compare. Recordings stay on this device for this visit only — nothing is uploaded.</li>
+  </ul>
+</div>
+
+<h2>Part 1: Learn Today's Words</h2>
+<div class="box tipbox" style="background:#fff3e0;border-left-color:#ef6c00"><strong>Listen &amp; practise:</strong> Tap <em>Hear model</em> for the phrase (Mainland Mandarin). Then tap <em>Record</em>, say it, and compare with <em>Play my try</em> and <em>Play model</em>. <em>Hear example</em> plays the short sentence.</div>
+<div class="audio-bar">
+  <button type="button" class="audio-ctrl hear" id="playAll">🔊 Play all words</button>
+  <button type="button" class="audio-ctrl stop" id="stopAudio">⏹️ Stop</button>
+  <span class="tone">Plays every phrase with the English meaning first.</span>
+</div>
+<div id="cards"></div>
+
+<h2>Part 2: Match the Meaning</h2>
+<div class="box">
+  <p>Match each Mandarin phrase to its English meaning.</p>
+  <div id="vmatch"></div>
+  <button type="button" class="main" id="checkMatch">Check my matching</button>
+  <div class="fb" id="matchFb"></div>
+</div>
+
+<h2>Part 3: What Would You Say?</h2>
+<p>Click the best Mandarin phrase for each situation. Only your <strong>first click</strong> counts toward your score.</p>
+<div id="mc"></div>
+
+<h2>Part 4: Type the Pinyin</h2>
+<p>Look at the characters and type Hanyu Pinyin. Tone marks (<span class="jyut">nǐ hǎo</span>) or tone numbers (<span class="jyut">ni3 hao3</span>) both count. Neutral syllables have no mark and no number (<span class="jyut">xièxie</span> or <span class="jyut">xie4 xie</span>). Spaces between syllables are fine.</p>
+<div id="fill"></div>
+
+<div class="box" id="final"></div>
+<div id="scoreBox">
+  <span id="scoreText"></span>
+  <button type="button" id="finishBtn">I'm done! Show my final score</button>
+</div>
+</div>
+
+<script src="../../audio/mandarin/player.js"></script>
+<script>
+var WORDS = [
+ {zh:"你好", py:"nǐ hǎo", audio:"01-ni3-hao3-hello.mp3", en:"hello",
+  ex_zh:"你好，我是凯文。", ex_py:"Nǐ hǎo, wǒ shì Kǎiwén.", ex_en:"Hello, I'm Kevin.",
+  ex_audio:"01-ni3-hao3-hello-ex.mp3"},
+ {zh:"再见", py:"zài jiàn", audio:"02-zai4-jian4-goodbye.mp3", en:"goodbye",
+  ex_zh:"再见，明天见。", ex_py:"Zài jiàn, míngtiān jiàn.", ex_en:"Goodbye, see you tomorrow.",
+  ex_audio:"02-zai4-jian4-goodbye-ex.mp3"},
+ {zh:"谢谢", py:"xièxie", audio:"03-xie4xie-thank-you.mp3", en:"thank you",
+  ex_zh:"谢谢你！", ex_py:"Xièxie nǐ!", ex_en:"Thank you!",
+  ex_audio:"03-xie4xie-thank-you-ex.mp3"},
+ {zh:"不客气", py:"bú kèqi", audio:"04-bu2-ke4qi-youre-welcome.mp3", en:"you're welcome",
+  ex_zh:"谢谢你。不客气。", ex_py:"Xièxie nǐ. Bú kèqi.", ex_en:"Thank you. You're welcome.",
+  ex_audio:"04-bu2-ke4qi-youre-welcome-ex.mp3"},
+ {zh:"对不起", py:"duìbuqǐ", audio:"05-dui4buqi3-sorry.mp3", en:"sorry",
+  ex_zh:"对不起，我来晚了。", ex_py:"Duìbuqǐ, wǒ lái wǎn le.", ex_en:"Sorry, I'm late.",
+  ex_audio:"05-dui4buqi3-sorry-ex.mp3"},
+ {zh:"请", py:"qǐng", audio:"06-qing3-please.mp3", en:"please",
+  ex_zh:"请坐。", ex_py:"Qǐng zuò.", ex_en:"Please have a seat.",
+  ex_audio:"06-qing3-please-ex.mp3"},
+ {zh:"早上好", py:"zǎoshang hǎo", audio:"07-zao3shang-hao3-good-morning.mp3", en:"good morning",
+  ex_zh:"老师，早上好。", ex_py:"Lǎoshī, zǎoshang hǎo.", ex_en:"Teacher, good morning.",
+  ex_audio:"07-zao3shang-hao3-good-morning-ex.mp3"},
+ {zh:"你叫什么名字", py:"nǐ jiào shénme míngzi", audio:"08-ni3-jiao4-shen2me-ming2zi-whats-your-name.mp3", en:"what's your name",
+  ex_zh:"我叫凯文。你叫什么名字？", ex_py:"Wǒ jiào Kǎiwén. Nǐ jiào shénme míngzi?", ex_en:"My name is Kevin. What's your name?",
+  ex_audio:"08-ni3-jiao4-shen2me-ming2zi-whats-your-name-ex.mp3"}
+];
+
+var PRAISE=["Nice work, Kevin!","正确！ Correct!","Yes — tones and all.","Excellent, Kevin!","Right. Say it once more out loud."];
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function shuffled(arr,seed){var a=arr.slice(),s=seed;for(var i=a.length-1;i>0;i--){s=(s*9301+49297)%233280;var j=Math.floor(s/233280*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+function buildCards(){
+  var box=document.getElementById("cards");
+  WORDS.forEach(function(w,i){
+    var d=document.createElement("div"); d.className="box";
+    if(w.audio){ d.setAttribute("data-audio", w.audio); d.setAttribute("data-audio-label", w.zh+" "+w.py); }
+    d.innerHTML='<div class="card">'+
+      '<div class="char">'+(i+1)+'. '+w.zh+'</div>'+
+      '<div class="meta"><div><span class="jyut">'+w.py+'</span> <span class="tone">← tap Hear model, then Record</span></div>'+
+      '<div><strong>'+w.en+'</strong></div></div></div>'+
+      '<div class="ex"><strong>Example:</strong> '+w.ex_zh+
+      ' <button type="button" class="speak ex-hear" data-file="'+w.ex_audio+'">🔊 Hear example</button><br>'+
+      '<span class="jyut">'+w.ex_py+'</span><br><em>'+w.ex_en+'</em></div>'+
+      '<div class="practice"></div>';
+    box.appendChild(d);
+  });
+  box.addEventListener("click", function(e){
+    var b=e.target.closest ? e.target.closest(".ex-hear") : null;
+    if(!b || !window.KevinMandarinAudio) return;
+    e.preventDefault();
+    KevinMandarinAudio.play(b.getAttribute("data-file"));
+  });
+}
+
+var matchScore=0, matchChecked=false;
+function buildMatch(){
+  var m=document.getElementById("vmatch");
+  var order=shuffled(WORDS.map(function(w){return w.py;}),16);
+  WORDS.forEach(function(w,i){
+    var row=document.createElement("div"); row.className="vrow"; row.id="vm"+i;
+    var sel='<select id="vsel'+i+'" aria-label="Meaning of '+w.zh+'"><option value="">- choose English -</option>';
+    order.forEach(function(py){
+      var en=WORDS.find(function(x){return x.py===py;}).en;
+      sel+='<option value="'+py+'">'+en+'</option>';
+    });
+    sel+='</select>';
+    row.innerHTML='<span class="mark" id="vmk'+i+'"></span><span class="w">'+w.zh+'</span><span class="jyut">'+w.py+'</span>'+sel;
+    m.appendChild(row);
+  });
+}
+function checkMatch(){
+  var score=0, blank=0;
+  WORDS.forEach(function(w,i){
+    var v=document.getElementById("vsel"+i).value, ok=(v===w.py);
+    if(!v) blank++;
+    if(ok) score++;
+    document.getElementById("vm"+i).className="vrow "+(ok?"right":"wrong");
+    document.getElementById("vmk"+i).textContent=ok?"✅":"❌";
+  });
+  matchScore=score; matchChecked=true;
+  var fb=document.getElementById("matchFb");
+  if(score===WORDS.length){ fb.className="fb good"; fb.textContent="🌟 "+score+" / "+WORDS.length+". Perfect matching, Kevin!"; }
+  else { fb.className="fb bad"; fb.textContent=score+" / "+WORDS.length+" correct"+(blank?" ("+blank+" blank)":"")+". Fix the ❌ ones and check again."; }
+  updateScore();
+}
+
+var MC = [
+ {q:"You meet someone for the first time. Which phrase means hello?",
+  o:["再见 zài jiàn","你好 nǐ hǎo","对不起 duìbuqǐ","请 qǐng"], a:1,
+  e:"你好 (nǐ hǎo) means hello."},
+ {q:"You are leaving the room. Which phrase means goodbye?",
+  o:["谢谢 xièxie","早上好 zǎoshang hǎo","再见 zài jiàn","不客气 bú kèqi"], a:2,
+  e:"再见 (zài jiàn) means goodbye."},
+ {q:"Someone holds the door for you. Which phrase means thank you?",
+  o:["谢谢 xièxie","请 qǐng","你好 nǐ hǎo","对不起 duìbuqǐ"], a:0,
+  e:"谢谢 (xièxie) means thank you. The second syllable is light."},
+ {q:"They say 谢谢. Which reply means you're welcome?",
+  o:["对不起 duìbuqǐ","再见 zài jiàn","不客气 bú kèqi","早上好 zǎoshang hǎo"], a:2,
+  e:"不客气 (bú kèqi) means you're welcome. 不 is bú before the 4th tone."},
+ {q:"You arrive late. Which phrase means sorry?",
+  o:["请 qǐng","对不起 duìbuqǐ","你好 nǐ hǎo","谢谢 xièxie"], a:1,
+  e:"对不起 (duìbuqǐ) means sorry. The middle syllable is neutral."},
+ {q:"You want them to sit down: ____坐. Which word means please?",
+  o:["请 qǐng","再见 zài jiàn","谢谢 xièxie","你好 nǐ hǎo"], a:0,
+  e:"请 (qǐng) means please. 请坐 (qǐng zuò) is please sit."},
+ {q:"You see a colleague at 8 a.m. Which phrase means good morning?",
+  o:["你好 nǐ hǎo","再见 zài jiàn","早上好 zǎoshang hǎo","你叫什么名字 nǐ jiào shénme míngzi"], a:2,
+  e:"早上好 (zǎoshang hǎo) means good morning. 上 is light in 早上."},
+ {q:"You did not catch their name. Which question means what's your name?",
+  o:["不客气 bú kèqi","你叫什么名字 nǐ jiào shénme míngzi","对不起 duìbuqǐ","早上好 zǎoshang hǎo"], a:1,
+  e:"你叫什么名字 (nǐ jiào shénme míngzi) means what's your name?"}
+];
+var mcState=MC.map(function(){return{answered:false,firstRight:false,done:false};});
+function buildMC(){
+  var box=document.getElementById("mc");
+  MC.forEach(function(item,i){
+    var d=document.createElement("div"); d.className="box q"; d.id="mc"+i;
+    var html="<div><strong>"+(i+1)+".</strong> "+item.q+"</div>";
+    item.o.forEach(function(opt,j){ html+='<button type="button" class="opt" data-i="'+i+'" data-j="'+j+'">'+String.fromCharCode(65+j)+". "+opt+"</button>"; });
+    html+='<div class="fb" id="mcfb'+i+'"></div>';
+    d.innerHTML=html; box.appendChild(d);
+  });
+  box.addEventListener("click",function(e){
+    var b=e.target.closest?e.target.closest(".opt"):e.target; if(!b||!b.classList.contains("opt"))return;
+    var i=+b.getAttribute("data-i"), j=+b.getAttribute("data-j"), st=mcState[i], item=MC[i];
+    if(st.done)return;
+    var right=(j===item.a);
+    if(!st.answered){ st.answered=true; st.firstRight=right; }
+    var fb=document.getElementById("mcfb"+i), card=document.getElementById("mc"+i);
+    if(right){ st.done=true; b.classList.add("sel-right"); card.className="box q right"; fb.className="fb good"; fb.innerHTML="✅ "+pick(PRAISE)+' <span class="explain">'+item.e+"</span>"; }
+    else { b.classList.add("sel-wrong"); card.className="box q wrong"; fb.className="fb bad"; fb.textContent="❌ Not quite, Kevin. Look back at Part 1 and try again."; }
+    updateScore();
+  });
+}
+
+var FILL = [
+ {zh:"你好", accept:["ni3 hao3"], show:"nǐ hǎo"},
+ {zh:"再见", accept:["zai4 jian4"], show:"zài jiàn"},
+ {zh:"谢谢", accept:["xie4 xie","xie4 xie4"], show:"xièxie"},
+ {zh:"不客气", accept:["bu2 ke4 qi","bu4 ke4 qi","bu2 ke4 qi4","bu4 ke4 qi4"], show:"bú kèqi"},
+ {zh:"对不起", accept:["dui4 bu qi3"], show:"duìbuqǐ"},
+ {zh:"请", accept:["qing3"], show:"qǐng"},
+ {zh:"早上好", accept:["zao3 shang hao3","zao3 shang4 hao3"], show:"zǎoshang hǎo"},
+ {zh:"你叫什么名字", accept:["ni3 jiao4 shen2 me ming2 zi","ni3 jiao4 shen2 me ming2 zi3"], show:"nǐ jiào shénme míngzi"}
+];
+var fillState=FILL.map(function(){return{correct:false,tries:0};});
+
+var SYL_SRC = "a ai an ang ao ba bai ban bang bao bei ben beng bi bian biao bie bin bing bo bu ca cai can cang cao ce cen ceng cha chai chan chang chao che chen cheng chi chong chou chu chua chuai chuan chuang chui chun chuo ci cong cou cu cuan cui cun cuo da dai dan dang dao de dei den deng di dia dian diao die ding diu dong dou du duan dui dun duo e ei en eng er fa fan fang fei fen feng fo fou fu ga gai gan gang gao ge gei gen geng gong gou gu gua guai guan guang gui gun guo ha hai han hang hao he hei hen heng hong hou hu hua huai huan huang hui hun huo ji jia jian jiang jiao jie jin jing jiong jiu ju juan jue jun ka kai kan kang kao ke ken keng kong kou ku kua kuai kuan kuang kui kun kuo la lai lan lang lao le lei leng li lia lian liang liao lie lin ling liu lo long lou lu lv luan lve lun luo ma mai man mang mao me mei men meng mi mian miao mie min ming miu mo mou mu na nai nan nang nao ne nei nen neng ni nian niang niao nie nin ning niu nong nou nu nv nuan nve nuo o ou pa pai pan pang pao pei pen peng pi pian piao pie pin ping po pou pu qi qia qian qiang qiao qie qin qing qiong qiu qu quan que qun ran rang rao re ren reng ri rong rou ru rua ruan rui run ruo sa sai san sang sao se sen seng sha shai shan shang shao she shei shen sheng shi shou shu shua shuai shuan shuang shui shun shuo si song sou su suan sui sun suo ta tai tan tang tao te teng ti tian tiao tie ting tong tou tu tuan tui tun tuo wa wai wan wang wei wen weng wo wu xi xia xian xiang xiao xie xin xing xiong xiu xu xuan xue xun ya yan yang yao ye yi yin ying yo yong you yu yuan yue yun za zai zan zang zao ze zei zen zeng zha zhai zhan zhang zhao zhe zhei zhen zheng zhi zhong zhou zhu zhua zhuai zhuan zhuang zhui zhun zhuo zi zong zou zu zuan zui zun zuo";
+var SYLS = SYL_SRC.split(/\s+/);
+SYLS.sort(function(a,b){ return b.length - a.length || (a < b ? -1 : 1); });
+
+function normPy(s){
+  if(s==null) return null;
+  var map = {"ā":"a1","á":"a2","ǎ":"a3","à":"a4","ē":"e1","é":"e2","ě":"e3","è":"e4","ī":"i1","í":"i2","ǐ":"i3","ì":"i4","ō":"o1","ó":"o2","ǒ":"o3","ò":"o4","ū":"u1","ú":"u2","ǔ":"u3","ù":"u4","ǖ":"v1","ǘ":"v2","ǚ":"v3","ǜ":"v4","ü":"v"};
+  var raw = String(s).trim().toLowerCase();
+  if(raw.normalize) raw = raw.normalize("NFC");
+  raw = raw.replace(/u:/g,"ü");
+  var tmp = "";
+  for(var i=0;i<raw.length;i++){
+    tmp += (map[raw.charAt(i)]!==undefined) ? map[raw.charAt(i)] : raw.charAt(i);
+  }
+  raw = tmp.replace(/[^a-z0-5]+/g,"");
+  if(!raw) return null;
+  var out = [], pos = 0;
+  while(pos < raw.length){
+    var matched = null;
+    for(var s=0;s<SYLS.length;s++){
+      var syl = SYLS[s], j = pos, k = 0, tone = "";
+      var ok = true;
+      while(k < syl.length){
+        if(j >= raw.length){ ok = false; break; }
+        var ch = raw.charAt(j);
+        if(ch >= "1" && ch <= "5"){
+          if(tone){ ok = false; break; }
+          tone = ch; j++; continue;
+        }
+        if(ch !== syl.charAt(k)){ ok = false; break; }
+        j++; k++;
+      }
+      if(!ok || k !== syl.length) continue;
+      if(j < raw.length){
+        var nxt = raw.charAt(j);
+        if(nxt >= "1" && nxt <= "5"){
+          if(tone) continue;
+          tone = nxt; j++;
+        }
+      }
+      matched = {end:j, syl:syl, tone:tone};
+      break;
+    }
+    if(!matched) return null;
+    var t = matched.tone;
+    if(t === "5" || t === "0") t = "";
+    out.push(matched.syl + t);
+    pos = matched.end;
+  }
+  return out.join(" ");
+}
+
+function buildFill(){
+  var box=document.getElementById("fill");
+  FILL.forEach(function(it,i){
+    var d=document.createElement("div"); d.className="box q"; d.id="f"+i;
+    d.innerHTML='<div><strong>'+(i+1)+'.</strong> Type pinyin for <span class="char" style="font-size:1.4em">'+it.zh+'</span></div>'+
+      '<div class="row"><input type="text" id="fi'+i+'" autocomplete="off" spellcheck="false" aria-label="Pinyin for '+it.zh+'">'+
+      '<button type="button" class="check" data-i="'+i+'">Check</button></div><div class="fb" id="ffb'+i+'"></div>';
+    box.appendChild(d);
+  });
+  box.addEventListener("click",function(e){
+    var b=e.target; if(b.tagName!=="BUTTON"||!b.classList.contains("check"))return;
+    fillCheck(+b.getAttribute("data-i"));
+  });
+  box.addEventListener("keydown",function(e){if(e.key==="Enter"&&e.target.tagName==="INPUT")fillCheck(+e.target.id.slice(2));});
+}
+function fillCheck(i){
+  var val=document.getElementById("fi"+i).value, fb=document.getElementById("ffb"+i), st=fillState[i];
+  if(!val.trim()){fb.className="fb bad";fb.textContent="Type the pinyin first.";return;}
+  st.tries++;
+  var got = normPy(val);
+  var ok = !!got && FILL[i].accept.indexOf(got) !== -1;
+  if(ok){
+    st.correct=true; document.getElementById("f"+i).className="box q right";
+    fb.className="fb good"; fb.textContent="✅ "+pick(PRAISE)+(st.tries===1?" (first try!)":"")+" "+FILL[i].show;
+  } else {
+    st.correct=false; document.getElementById("f"+i).className="box q wrong";
+    fb.className="fb bad";
+    fb.textContent = got ? "❌ Not quite. Check every tone. A form that works: "+FILL[i].show+" or tone numbers."
+                         : "❌ Could not read that as pinyin. Try tone marks (nǐ hǎo) or numbers (ni3 hao3).";
+  }
+  updateScore();
+}
+
+function scores(){
+  var mc=0; mcState.forEach(function(s){if(s.firstRight)mc++;});
+  var f=0; fillState.forEach(function(s){if(s.correct)f++;});
+  return {match:matchScore, mc:mc, fill:f};
+}
+function updateScore(){
+  var s=scores();
+  document.getElementById("scoreText").textContent="Match: "+(matchChecked?s.match:"-")+"/"+WORDS.length+" · Situations: "+s.mc+"/"+MC.length+" · Pinyin: "+s.fill+"/"+FILL.length;
+}
+function finish(){
+  if(!matchChecked) checkMatch();
+  var s=scores(), total=WORDS.length+MC.length+FILL.length, got=s.match+s.mc+s.fill, pct=Math.round(100*got/total);
+  var msg = pct===100 ? "🏆 完美！ Perfect score, Kevin. You can greet someone in Mandarin." :
+            pct>=80 ? "🌟 Strong start. Say each phrase out loud once more tonight." :
+            pct>=60 ? "💪 Solid effort. Review the cards and retry the ❌ ones." :
+                      "🌱 Day 1 is supposed to feel new. Read Part 1 again, say each phrase three times, then retry.";
+  var f=document.getElementById("final"); f.style.display="block";
+  f.innerHTML="<h2 style='border:none;margin-top:0'>Final Score: "+got+" / "+total+" ("+pct+"%)</h2>"+
+    "<p>Matching: "+s.match+"/"+WORDS.length+" · Situations (first try): "+s.mc+"/"+MC.length+" · Pinyin typing: "+s.fill+"/"+FILL.length+"</p><p>"+msg+"</p>"+
+    "<p style='font-size:.85em;color:#ef6c00'>Finished on "+new Date().toLocaleString("en-CA",{timeZone:"America/Vancouver"})+" PT</p>";
+  f.scrollIntoView({behavior:"smooth"});
+}
+buildCards(); buildMatch(); buildMC(); buildFill(); updateScore();
+if(window.KevinMandarinAudio) KevinMandarinAudio.wireLesson({playAllBtn:"#playAll",stopBtn:"#stopAudio"});
+document.getElementById("checkMatch").addEventListener("click",checkMatch);
+document.getElementById("finishBtn").addEventListener("click",finish);
+</script>
+</body>
+</html>
