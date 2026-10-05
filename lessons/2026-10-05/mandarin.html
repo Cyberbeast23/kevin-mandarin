@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mandarin (Oct. 5): Numbers 1 to 10</title>
+<style>
+  body{font-family:"Segoe UI",Verdana,Arial,sans-serif;font-size:20px;line-height:1.6;margin:0;background:#f5f0eb;color:#2c2416}
+  .wrap{max-width:880px;margin:0 auto;padding:20px 18px 80px}
+  a.home{font-size:.9em;color:#bf360c}
+  h1{color:#e65100;font-size:2em;margin:10px 0}
+  h2{color:#ef6c00;margin-top:36px;border-bottom:3px solid #ffcc80;padding-bottom:4px}
+  h3{color:#ef6c00}
+  .box{background:#fff;border-radius:16px;padding:18px 22px;margin:16px 0;box-shadow:0 3px 10px rgba(0,0,0,.07)}
+  .tipbox{background:#fff8e1;border-left:8px solid #ffb300}
+  .char{font-size:2.2em;font-weight:bold;color:#e65100;line-height:1.2}
+  .jyut{font-family:Consolas,"Courier New",monospace;background:#fff3e0;padding:2px 8px;border-radius:8px;font-size:1.05em}
+  .card{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;align-items:center;border-left:8px solid #ef6c00;padding-left:14px}
+  .card .meta{grid-column:2}
+  .ex{margin-top:8px;background:#fff3e0;border-radius:10px;padding:8px 12px;font-size:.95em}
+  .q{border-left:8px solid #b0bec5}
+  .q.right{border-left-color:#43a047;background:#f1f8e9}
+  .q.wrong{border-left-color:#e53935;background:#fff5f5}
+  .opt{display:block;width:100%;text-align:left;font-size:.95em;background:#fafafa;border:2px solid #e0e0e0;border-radius:10px;padding:8px 14px;margin:8px 0;cursor:pointer;font-family:inherit}
+  .opt:hover{border-color:#ffb74d;background:#fff}
+  .opt.sel-right{background:#c8e6c9;border-color:#43a047}
+  .opt.sel-wrong{background:#ffcdd2;border-color:#e53935}
+  .fb{margin-top:6px;font-weight:bold}
+  .fb.good{color:#2e7d32} .fb.bad{color:#c62828}
+  .explain{font-weight:normal;color:#e65100}
+  .vrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:8px 6px;border-bottom:1px dashed #eee}
+  .vrow .w{font-weight:bold;min-width:120px;font-size:1.3em}
+  .vrow.right{background:#f1f8e9} .vrow.wrong{background:#fff5f5}
+  select{font-size:.95em;padding:6px 8px;border-radius:8px;border:2px solid #ffb74d;max-width:100%;font-family:inherit}
+  .mark{font-size:1.2em;min-width:30px}
+  button.main{font-size:1em;padding:10px 20px;border:none;border-radius:10px;cursor:pointer;font-weight:bold;background:#ef6c00;color:#fff;margin-top:10px}
+  button.main:hover{background:#e65100}
+  input[type=text]{font-size:1.05em;padding:8px 12px;border:2px solid #ffb74d;border-radius:10px;width:min(100%,320px);font-family:inherit}
+  button.check{font-size:.95em;padding:8px 16px;border:none;border-radius:10px;cursor:pointer;font-weight:bold;background:#ef6c00;color:#fff}
+  .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px}
+  #scoreBox{position:sticky;bottom:0;background:#e65100;color:#fff;border-radius:16px 16px 0 0;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-top:30px}
+  #scoreBox button{font-size:.95em;padding:8px 16px;border:none;border-radius:10px;cursor:pointer;font-weight:bold;background:#ffca28;color:#3e2723}
+  #final{display:none;text-align:center;border:4px solid #43a047;font-size:1.1em}
+  .tone{font-size:.85em;color:#ef6c00}
+
+  .audio-bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:12px 0 4px}
+  button.speak,button.record,button.play-mine,button.play-model,button.audio-ctrl{
+    font-size:1.05em;padding:14px 18px;min-height:52px;min-width:52px;
+    border:none;border-radius:14px;cursor:pointer;font-weight:bold;font-family:inherit;
+    touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+  }
+  button.speak,button.play-model,button.audio-ctrl.hear{background:#ef6c00;color:#fff}
+  button.speak:hover,button.play-model:hover,button.audio-ctrl.hear:hover{background:#e65100}
+  button.speak.playing{background:#43a047}
+  button.record{background:#e53935;color:#fff}
+  button.record:hover{background:#c62828}
+  button.record.recording{background:#ffca28;color:#3e2723;animation:pulse 1s infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+  button.play-mine{background:#00897b;color:#fff}
+  button.play-mine:hover{background:#00695c}
+  button.play-mine:disabled{opacity:.45;cursor:not-allowed}
+  button.audio-ctrl.stop{background:#546e7a;color:#fff}
+  button.audio-ctrl.stop:hover{background:#37474f}
+  .practice{margin-top:14px;padding-top:12px;border-top:2px dashed #ffcc80}
+  .practice-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .rec-status{margin-top:8px;font-weight:bold;color:#ef6c00;font-size:.95em}
+  .rec-status.rec-on{color:#c62828}
+  .mic-msg{margin-top:8px;background:#fff3e0;border-left:6px solid #ef6c00;border-radius:10px;padding:10px 14px;font-size:.95em;color:#e65100}
+  .box[data-audio]{position:relative}
+  button.ex-hear{font-size:.85em;padding:8px 12px;min-height:44px;min-width:44px;margin-left:6px;vertical-align:middle}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="home" href="../../index.html">&larr; Back to all lessons</a>
+<h1>🗣️ Mandarin Day 2: Numbers 1 to 10 数字</h1>
+<p>Kevin, today is counting. Ten numbers, one to ten, each with a short real-life example: times, prices, and counting things. Characters are <strong>Simplified Chinese</strong>. The pronunciation line is <strong>Hanyu Pinyin</strong> with tone marks. Once you have these ten, you can already say any number up to 99.</p>
+
+<div class="box tipbox">
+  <strong>How to read the tones:</strong>
+  <ul>
+    <li><strong>1st</strong> ā high and flat · <strong>2nd</strong> á rising · <strong>3rd</strong> ǎ dipping · <strong>4th</strong> à falling. <strong>No mark</strong> means a short, light (neutral) syllable.</li>
+    <li><strong>一 changes:</strong> on its own or when counting it is <span class="jyut">yī</span>. Before a 4th tone it becomes <span class="jyut">yí</span> (一个 <span class="jyut">yí ge</span>, because 个 is really <span class="jyut">gè</span>). Before tones 1, 2, or 3 it becomes <span class="jyut">yì</span>. Type the plain <span class="jyut">yī</span> for the word itself.</li>
+    <li><strong>Bigger numbers are easy:</strong> 十一 <span class="jyut">shíyī</span> is 11 (ten-one), 二十 <span class="jyut">èrshí</span> is 20 (two-ten), and 九十九 <span class="jyut">jiǔshíjiǔ</span> is 99.</li>
+    <li><strong>二 vs 两:</strong> say 二 <span class="jyut">èr</span> when counting or in maths. Before a measure word (two people, two apples) Mandarin uses 两 <span class="jyut">liǎng</span>. That one comes in a later lesson.</li>
+    <li><strong>Phone numbers:</strong> in Mainland phone and room numbers, 1 is often read <span class="jyut">yāo</span> so it is not confused with 7 (<span class="jyut">qī</span>).</li>
+    <li><strong>Watch these pairs:</strong> 四 <span class="jyut">sì</span> (four) vs 十 <span class="jyut">shí</span> (ten). The <span class="jyut">s</span> is a plain s, the <span class="jyut">sh</span> curls the tongue back. Tones differ too: falling vs rising.</li>
+  </ul>
+</div>
+
+<h2>Part 1: Learn Today's Words</h2>
+<div class="box tipbox" style="background:#fff3e0;border-left-color:#ef6c00"><strong>Listen &amp; practise:</strong> Tap <em>Hear model</em> for the phrase (Mainland Mandarin). Then tap <em>Record</em>, say it, and compare with <em>Play my try</em> and <em>Play model</em>. <em>Hear example</em> plays the short sentence.</div>
+<div class="audio-bar">
+  <button type="button" class="audio-ctrl hear" id="playAll">🔊 Play all words</button>
+  <button type="button" class="audio-ctrl stop" id="stopAudio">⏹️ Stop</button>
+  <span class="tone">Plays every number with the English first.</span>
+</div>
+<div id="cards"></div>
+
+<h2>Part 2: Match the Meaning</h2>
+<div class="box">
+  <p>Match each Mandarin phrase to its English meaning.</p>
+  <div id="vmatch"></div>
+  <button type="button" class="main" id="checkMatch">Check my matching</button>
+  <div class="fb" id="matchFb"></div>
+</div>
+
+<h2>Part 3: What Would You Say?</h2>
+<p>Click the best Mandarin phrase for each situation. Only your <strong>first click</strong> counts toward your score.</p>
+<div id="mc"></div>
+
+<h2>Part 4: Type the Pinyin</h2>
+<p>Look at the characters and type Hanyu Pinyin. Tone marks (<span class="jyut">sān</span>) or tone numbers (<span class="jyut">san1</span>) both count. The last two put numbers together: 十八 is ten-eight, and 四十 is four-ten. Spaces between syllables are fine.</p>
+<div id="fill"></div>
+
+<div class="box" id="final"></div>
+<div id="scoreBox">
+  <span id="scoreText"></span>
+  <button type="button" id="finishBtn">I'm done! Show my final score</button>
+</div>
+</div>
+
+<script src="../../audio/mandarin/player.js"></script>
+<script>
+var WORDS = [
+ {zh:"一", py:"yī", audio:"day2-01-yi1-one.mp3", en:"one",
+  ex_zh:"我有一个问题。", ex_py:"Wǒ yǒu yí ge wèntí.", ex_en:"I have one question.",
+  ex_audio:"day2-01-yi1-one-ex.mp3"},
+ {zh:"二", py:"èr", audio:"day2-02-er4-two.mp3", en:"two",
+  ex_zh:"一加一等于二。", ex_py:"Yī jiā yī děngyú èr.", ex_en:"One plus one equals two.",
+  ex_audio:"day2-02-er4-two-ex.mp3"},
+ {zh:"三", py:"sān", audio:"day2-03-san1-three.mp3", en:"three",
+  ex_zh:"我们三点见。", ex_py:"Wǒmen sān diǎn jiàn.", ex_en:"See you at three o'clock.",
+  ex_audio:"day2-03-san1-three-ex.mp3"},
+ {zh:"四", py:"sì", audio:"day2-04-si4-four.mp3", en:"four",
+  ex_zh:"四个苹果。", ex_py:"Sì ge píngguǒ.", ex_en:"Four apples.",
+  ex_audio:"day2-04-si4-four-ex.mp3"},
+ {zh:"五", py:"wǔ", audio:"day2-05-wu3-five.mp3", en:"five",
+  ex_zh:"五块钱。", ex_py:"Wǔ kuài qián.", ex_en:"Five yuan.",
+  ex_audio:"day2-05-wu3-five-ex.mp3"},
+ {zh:"六", py:"liù", audio:"day2-06-liu4-six.mp3", en:"six",
+  ex_zh:"我六点起床。", ex_py:"Wǒ liù diǎn qǐchuáng.", ex_en:"I get up at six.",
+  ex_audio:"day2-06-liu4-six-ex.mp3"},
+ {zh:"七", py:"qī", audio:"day2-07-qi1-seven.mp3", en:"seven",
+  ex_zh:"一个星期有七天。", ex_py:"Yí ge xīngqī yǒu qī tiān.", ex_en:"A week has seven days.",
+  ex_audio:"day2-07-qi1-seven-ex.mp3"},
+ {zh:"八", py:"bā", audio:"day2-08-ba1-eight.mp3", en:"eight",
+  ex_zh:"我八点上班。", ex_py:"Wǒ bā diǎn shàngbān.", ex_en:"I start work at eight.",
+  ex_audio:"day2-08-ba1-eight-ex.mp3"},
+ {zh:"九", py:"jiǔ", audio:"day2-09-jiu3-nine.mp3", en:"nine",
+  ex_zh:"现在九点。", ex_py:"Xiànzài jiǔ diǎn.", ex_en:"It's nine o'clock now.",
+  ex_audio:"day2-09-jiu3-nine-ex.mp3"},
+ {zh:"十", py:"shí", audio:"day2-10-shi2-ten.mp3", en:"ten",
+  ex_zh:"这里有十个人。", ex_py:"Zhèlǐ yǒu shí ge rén.", ex_en:"There are ten people here.",
+  ex_audio:"day2-10-shi2-ten-ex.mp3"}
+];
+
+var PRAISE=["Nice work, Kevin!","正确！ Correct!","Yes — tones and all.","Excellent, Kevin!","Right. Say it once more out loud.","十分好！ Ten out of ten!"];
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function shuffled(arr,seed){var a=arr.slice(),s=seed;for(var i=a.length-1;i>0;i--){s=(s*9301+49297)%233280;var j=Math.floor(s/233280*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+function buildCards(){
+  var box=document.getElementById("cards");
+  WORDS.forEach(function(w,i){
+    var d=document.createElement("div"); d.className="box";
+    if(w.audio){ d.setAttribute("data-audio", w.audio); d.setAttribute("data-audio-label", w.zh+" "+w.py); }
+    d.innerHTML='<div class="card">'+
+      '<div class="char">'+(i+1)+'. '+w.zh+'</div>'+
+      '<div class="meta"><div><span class="jyut">'+w.py+'</span> <span class="tone">← tap Hear model, then Record</span></div>'+
+      '<div><strong>'+w.en+'</strong></div></div></div>'+
+      '<div class="ex"><strong>Example:</strong> '+w.ex_zh+
+      ' <button type="button" class="speak ex-hear" data-file="'+w.ex_audio+'">🔊 Hear example</button><br>'+
+      '<span class="jyut">'+w.ex_py+'</span><br><em>'+w.ex_en+'</em></div>'+
+      '<div class="practice"></div>';
+    box.appendChild(d);
+  });
+  box.addEventListener("click", function(e){
+    var b=e.target.closest ? e.target.closest(".ex-hear") : null;
+    if(!b || !window.KevinMandarinAudio) return;
+    e.preventDefault();
+    KevinMandarinAudio.play(b.getAttribute("data-file"));
+  });
+}
+
+var matchScore=0, matchChecked=false;
+function buildMatch(){
+  var m=document.getElementById("vmatch");
+  var order=shuffled(WORDS.map(function(w){return w.py;}),23);
+  WORDS.forEach(function(w,i){
+    var row=document.createElement("div"); row.className="vrow"; row.id="vm"+i;
+    var sel='<select id="vsel'+i+'" aria-label="Meaning of '+w.zh+'"><option value="">- choose English -</option>';
+    order.forEach(function(py){
+      var en=WORDS.find(function(x){return x.py===py;}).en;
+      sel+='<option value="'+py+'">'+en+'</option>';
+    });
+    sel+='</select>';
+    row.innerHTML='<span class="mark" id="vmk'+i+'"></span><span class="w">'+w.zh+'</span><span class="jyut">'+w.py+'</span>'+sel;
+    m.appendChild(row);
+  });
+}
+function checkMatch(){
+  var score=0, blank=0;
+  WORDS.forEach(function(w,i){
+    var v=document.getElementById("vsel"+i).value, ok=(v===w.py);
+    if(!v) blank++;
+    if(ok) score++;
+    document.getElementById("vm"+i).className="vrow "+(ok?"right":"wrong");
+    document.getElementById("vmk"+i).textContent=ok?"✅":"❌";
+  });
+  matchScore=score; matchChecked=true;
+  var fb=document.getElementById("matchFb");
+  if(score===WORDS.length){ fb.className="fb good"; fb.textContent="🌟 "+score+" / "+WORDS.length+". Perfect matching, Kevin!"; }
+  else { fb.className="fb bad"; fb.textContent=score+" / "+WORDS.length+" correct"+(blank?" ("+blank+" blank)":"")+". Fix the ❌ ones and check again."; }
+  updateScore();
+}
+
+var MC = [
+ {q:"The meeting is at 3 o'clock. How do you say three?",
+  o:["四 sì","三 sān","十 shí","七 qī"], a:1,
+  e:"三 (sān) is three. 三点 (sān diǎn) is three o'clock."},
+ {q:"A coffee costs five yuan: ___块钱. Which number fits?",
+  o:["五 wǔ","九 jiǔ","二 èr","六 liù"], a:0,
+  e:"五 (wǔ) is five. 五块钱 (wǔ kuài qián) is five yuan."},
+ {q:"一加一等于___? (one plus one equals …)",
+  o:["一 yī","三 sān","二 èr","十 shí"], a:2,
+  e:"一加一等于二. 二 (èr) is two, used for counting and maths."},
+ {q:"A week has how many days? 一个星期有___天.",
+  o:["六 liù","七 qī","八 bā","五 wǔ"], a:1,
+  e:"七 (qī) is seven. 七天 (qī tiān) is seven days."},
+ {q:"Which one is ten? (Careful, it is easy to mix up with four.)",
+  o:["四 sì","十 shí","是 shì","七 qī"], a:1,
+  e:"十 (shí) is ten: sh sound and a rising tone. 四 (sì) is four: plain s and a falling tone."},
+ {q:"三加六等于___? (three plus six)",
+  o:["八 bā","十 shí","九 jiǔ","七 qī"], a:2,
+  e:"3 + 6 = 9. 九 (jiǔ) is nine, a 3rd (dipping) tone."},
+ {q:"You start work at 8. Which is eight?",
+  o:["八 bā","六 liù","四 sì","一 yī"], a:0,
+  e:"八 (bā) is eight. 八点上班 is start work at eight."},
+ {q:"How would you say 16 in Mandarin? (ten-six)",
+  o:["六十 liùshí","十六 shíliù","一六 yī liù","六一 liù yī"], a:1,
+  e:"十六 (shíliù) is 16: ten then six. 六十 (liùshí) is 60: six tens."}
+];
+var mcState=MC.map(function(){return{answered:false,firstRight:false,done:false};});
+function buildMC(){
+  var box=document.getElementById("mc");
+  MC.forEach(function(item,i){
+    var d=document.createElement("div"); d.className="box q"; d.id="mc"+i;
+    var html="<div><strong>"+(i+1)+".</strong> "+item.q+"</div>";
+    item.o.forEach(function(opt,j){ html+='<button type="button" class="opt" data-i="'+i+'" data-j="'+j+'">'+String.fromCharCode(65+j)+". "+opt+"</button>"; });
+    html+='<div class="fb" id="mcfb'+i+'"></div>';
+    d.innerHTML=html; box.appendChild(d);
+  });
+  box.addEventListener("click",function(e){
+    var b=e.target.closest?e.target.closest(".opt"):e.target; if(!b||!b.classList.contains("opt"))return;
+    var i=+b.getAttribute("data-i"), j=+b.getAttribute("data-j"), st=mcState[i], item=MC[i];
+    if(st.done)return;
+    var right=(j===item.a);
+    if(!st.answered){ st.answered=true; st.firstRight=right; }
+    var fb=document.getElementById("mcfb"+i), card=document.getElementById("mc"+i);
+    if(right){ st.done=true; b.classList.add("sel-right"); card.className="box q right"; fb.className="fb good"; fb.innerHTML="✅ "+pick(PRAISE)+' <span class="explain">'+item.e+"</span>"; }
+    else { b.classList.add("sel-wrong"); card.className="box q wrong"; fb.className="fb bad"; fb.textContent="❌ Not quite, Kevin. Look back at Part 1 and try again."; }
+    updateScore();
+  });
+}
+
+var FILL = [
+ {zh:"一", accept:["yi1"], show:"yī"},
+ {zh:"二", accept:["er4"], show:"èr"},
+ {zh:"三", accept:["san1"], show:"sān"},
+ {zh:"四", accept:["si4"], show:"sì"},
+ {zh:"五", accept:["wu3"], show:"wǔ"},
+ {zh:"六", accept:["liu4"], show:"liù"},
+ {zh:"七", accept:["qi1"], show:"qī"},
+ {zh:"八", accept:["ba1"], show:"bā"},
+ {zh:"九", accept:["jiu3"], show:"jiǔ"},
+ {zh:"十", accept:["shi2"], show:"shí"},
+ {zh:"十八", accept:["shi2 ba1"], show:"shíbā"},
+ {zh:"四十", accept:["si4 shi2"], show:"sìshí"}
+];
+var fillState=FILL.map(function(){return{correct:false,tries:0};});
+
+var SYL_SRC = "a ai an ang ao ba bai ban bang bao bei ben beng bi bian biao bie bin bing bo bu ca cai can cang cao ce cen ceng cha chai chan chang chao che chen cheng chi chong chou chu chua chuai chuan chuang chui chun chuo ci cong cou cu cuan cui cun cuo da dai dan dang dao de dei den deng di dia dian diao die ding diu dong dou du duan dui dun duo e ei en eng er fa fan fang fei fen feng fo fou fu ga gai gan gang gao ge gei gen geng gong gou gu gua guai guan guang gui gun guo ha hai han hang hao he hei hen heng hong hou hu hua huai huan huang hui hun huo ji jia jian jiang jiao jie jin jing jiong jiu ju juan jue jun ka kai kan kang kao ke ken keng kong kou ku kua kuai kuan kuang kui kun kuo la lai lan lang lao le lei leng li lia lian liang liao lie lin ling liu lo long lou lu lv luan lve lun luo ma mai man mang mao me mei men meng mi mian miao mie min ming miu mo mou mu na nai nan nang nao ne nei nen neng ni nian niang niao nie nin ning niu nong nou nu nv nuan nve nuo o ou pa pai pan pang pao pei pen peng pi pian piao pie pin ping po pou pu qi qia qian qiang qiao qie qin qing qiong qiu qu quan que qun ran rang rao re ren reng ri rong rou ru rua ruan rui run ruo sa sai san sang sao se sen seng sha shai shan shang shao she shei shen sheng shi shou shu shua shuai shuan shuang shui shun shuo si song sou su suan sui sun suo ta tai tan tang tao te teng ti tian tiao tie ting tong tou tu tuan tui tun tuo wa wai wan wang wei wen weng wo wu xi xia xian xiang xiao xie xin xing xiong xiu xu xuan xue xun ya yan yang yao ye yi yin ying yo yong you yu yuan yue yun za zai zan zang zao ze zei zen zeng zha zhai zhan zhang zhao zhe zhei zhen zheng zhi zhong zhou zhu zhua zhuai zhuan zhuang zhui zhun zhuo zi zong zou zu zuan zui zun zuo";
+var SYLS = SYL_SRC.split(/\s+/);
+SYLS.sort(function(a,b){ return b.length - a.length || (a < b ? -1 : 1); });
+
+function normPy(s){
+  if(s==null) return null;
+  var map = {"ā":"a1","á":"a2","ǎ":"a3","à":"a4","ē":"e1","é":"e2","ě":"e3","è":"e4","ī":"i1","í":"i2","ǐ":"i3","ì":"i4","ō":"o1","ó":"o2","ǒ":"o3","ò":"o4","ū":"u1","ú":"u2","ǔ":"u3","ù":"u4","ǖ":"v1","ǘ":"v2","ǚ":"v3","ǜ":"v4","ü":"v"};
+  var raw = String(s).trim().toLowerCase();
+  if(raw.normalize) raw = raw.normalize("NFC");
+  raw = raw.replace(/u:/g,"ü");
+  var tmp = "";
+  for(var i=0;i<raw.length;i++){
+    tmp += (map[raw.charAt(i)]!==undefined) ? map[raw.charAt(i)] : raw.charAt(i);
+  }
+  raw = tmp.replace(/[^a-z0-5]+/g,"");
+  if(!raw) return null;
+  var out = [], pos = 0;
+  while(pos < raw.length){
+    var matched = null;
+    for(var s=0;s<SYLS.length;s++){
+      var syl = SYLS[s], j = pos, k = 0, tone = "";
+      var ok = true;
+      while(k < syl.length){
+        if(j >= raw.length){ ok = false; break; }
+        var ch = raw.charAt(j);
+        if(ch >= "1" && ch <= "5"){
+          if(tone){ ok = false; break; }
+          tone = ch; j++; continue;
+        }
+        if(ch !== syl.charAt(k)){ ok = false; break; }
+        j++; k++;
+      }
+      if(!ok || k !== syl.length) continue;
+      if(j < raw.length){
+        var nxt = raw.charAt(j);
+        if(nxt >= "1" && nxt <= "5"){
+          if(tone) continue;
+          tone = nxt; j++;
+        }
+      }
+      matched = {end:j, syl:syl, tone:tone};
+      break;
+    }
+    if(!matched) return null;
+    var t = matched.tone;
+    if(t === "5" || t === "0") t = "";
+    out.push(matched.syl + t);
+    pos = matched.end;
+  }
+  return out.join(" ");
+}
+
+function buildFill(){
+  var box=document.getElementById("fill");
+  FILL.forEach(function(it,i){
+    var d=document.createElement("div"); d.className="box q"; d.id="f"+i;
+    d.innerHTML='<div><strong>'+(i+1)+'.</strong> Type pinyin for <span class="char" style="font-size:1.4em">'+it.zh+'</span></div>'+
+      '<div class="row"><input type="text" id="fi'+i+'" autocomplete="off" spellcheck="false" aria-label="Pinyin for '+it.zh+'">'+
+      '<button type="button" class="check" data-i="'+i+'">Check</button></div><div class="fb" id="ffb'+i+'"></div>';
+    box.appendChild(d);
+  });
+  box.addEventListener("click",function(e){
+    var b=e.target; if(b.tagName!=="BUTTON"||!b.classList.contains("check"))return;
+    fillCheck(+b.getAttribute("data-i"));
+  });
+  box.addEventListener("keydown",function(e){if(e.key==="Enter"&&e.target.tagName==="INPUT")fillCheck(+e.target.id.slice(2));});
+}
+function fillCheck(i){
+  var val=document.getElementById("fi"+i).value, fb=document.getElementById("ffb"+i), st=fillState[i];
+  if(!val.trim()){fb.className="fb bad";fb.textContent="Type the pinyin first.";return;}
+  st.tries++;
+  var got = normPy(val);
+  var ok = !!got && FILL[i].accept.indexOf(got) !== -1;
+  if(ok){
+    st.correct=true; document.getElementById("f"+i).className="box q right";
+    fb.className="fb good"; fb.textContent="✅ "+pick(PRAISE)+(st.tries===1?" (first try!)":"")+" "+FILL[i].show;
+  } else {
+    st.correct=false; document.getElementById("f"+i).className="box q wrong";
+    fb.className="fb bad";
+    fb.textContent = got ? "❌ Not quite. Check every tone. A form that works: "+FILL[i].show+" or tone numbers."
+                         : "❌ Could not read that as pinyin. Try tone marks (sān) or numbers (san1).";
+  }
+  updateScore();
+}
+
+function scores(){
+  var mc=0; mcState.forEach(function(s){if(s.firstRight)mc++;});
+  var f=0; fillState.forEach(function(s){if(s.correct)f++;});
+  return {match:matchScore, mc:mc, fill:f};
+}
+function updateScore(){
+  var s=scores();
+  document.getElementById("scoreText").textContent="Match: "+(matchChecked?s.match:"-")+"/"+WORDS.length+" · Situations: "+s.mc+"/"+MC.length+" · Pinyin: "+s.fill+"/"+FILL.length;
+}
+function finish(){
+  if(!matchChecked) checkMatch();
+  var s=scores(), total=WORDS.length+MC.length+FILL.length, got=s.match+s.mc+s.fill, pct=Math.round(100*got/total);
+  var msg = pct===100 ? "🏆 完美！ Perfect score, Kevin. You can count to ten, and past it, in Mandarin." :
+            pct>=80 ? "🌟 Strong work. Count from 一 to 十 out loud once more tonight." :
+            pct>=60 ? "💪 Solid effort. Review the cards and retry the ❌ ones." :
+                      "🌱 Numbers take a few passes. Play all words, count along three times, then retry.";
+  var f=document.getElementById("final"); f.style.display="block";
+  f.innerHTML="<h2 style='border:none;margin-top:0'>Final Score: "+got+" / "+total+" ("+pct+"%)</h2>"+
+    "<p>Matching: "+s.match+"/"+WORDS.length+" · Situations (first try): "+s.mc+"/"+MC.length+" · Pinyin typing: "+s.fill+"/"+FILL.length+"</p><p>"+msg+"</p>"+
+    "<p style='font-size:.85em;color:#ef6c00'>Finished on "+new Date().toLocaleString("en-CA",{timeZone:"America/Vancouver"})+" PT</p>";
+  f.scrollIntoView({behavior:"smooth"});
+}
+buildCards(); buildMatch(); buildMC(); buildFill(); updateScore();
+if(window.KevinMandarinAudio) KevinMandarinAudio.wireLesson({playAllBtn:"#playAll",stopBtn:"#stopAudio",allFile:"day2-ALL-words.mp3"});
+document.getElementById("checkMatch").addEventListener("click",checkMatch);
+document.getElementById("finishBtn").addEventListener("click",finish);
+</script>
+</body>
+</html>

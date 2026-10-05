@@ -17,3 +17,16 @@
 请	qǐng	please
 早上好	zǎoshang hǎo	good morning
 你叫什么名字	nǐ jiào shénme míngzi	what's your name
+
+# Day 2 (2026-10-05): numbers 1 to 10
+# Tone notes: 一 is yī alone / counting; yí before 4th tone (一个 yí ge), yì before tones 1-3. 二 èr for counting; 两 liǎng before measure words (not yet taught).
+一	yī	one
+二	èr	two
+三	sān	three
+四	sì	four
+五	wǔ	five
+六	liù	six
+七	qī	seven
+八	bā	eight
+九	jiǔ	nine
+十	shí	ten

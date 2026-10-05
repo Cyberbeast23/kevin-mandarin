@@ -57,3 +57,57 @@ ALL-words.mp3 speaks the English meaning, then the Mandarin phrase, for every wo
 with about 1.5 seconds of silence between items.
 
 Tones: 1 high flat, 2 rising, 3 dipping, 4 falling. No mark = neutral (light) tone.
+
+Day 2 (2026-10-05): numbers 1 to 10. Files use the day2- prefix.
+---------------------------------------------------------
+day2-01-yi1-one.mp3
+  Chinese: 一
+  Pinyin:  yī
+  English: one
+
+day2-02-er4-two.mp3
+  Chinese: 二
+  Pinyin:  èr
+  English: two
+
+day2-03-san1-three.mp3
+  Chinese: 三
+  Pinyin:  sān
+  English: three
+
+day2-04-si4-four.mp3
+  Chinese: 四
+  Pinyin:  sì
+  English: four
+
+day2-05-wu3-five.mp3
+  Chinese: 五
+  Pinyin:  wǔ
+  English: five
+
+day2-06-liu4-six.mp3
+  Chinese: 六
+  Pinyin:  liù
+  English: six
+
+day2-07-qi1-seven.mp3
+  Chinese: 七
+  Pinyin:  qī
+  English: seven
+
+day2-08-ba1-eight.mp3
+  Chinese: 八
+  Pinyin:  bā
+  English: eight
+
+day2-09-jiu3-nine.mp3
+  Chinese: 九
+  Pinyin:  jiǔ
+  English: nine
+
+day2-10-shi2-ten.mp3
+  Chinese: 十
+  Pinyin:  shí
+  English: ten
+
+day2-ALL-words.mp3 speaks the English, then the Mandarin, for every Day 2 number.
