@@ -7,6 +7,7 @@ Daily Mandarin practice (Simplified Chinese, Hanyu Pinyin, English). Each lesson
 - Hub: https://cyberbeast23.github.io/kevin-mandarin/
 - Day 1 (2026-10-04): https://cyberbeast23.github.io/kevin-mandarin/lessons/2026-10-04/mandarin.html
 - Day 2 (2026-10-05): https://cyberbeast23.github.io/kevin-mandarin/lessons/2026-10-05/mandarin.html
+- Day 3 (2026-10-06): https://cyberbeast23.github.io/kevin-mandarin/lessons/2026-10-06/mandarin.html
 
 ## Adding a new day
 

@@ -111,3 +111,47 @@ day2-10-shi2-ten.mp3
   English: ten
 
 day2-ALL-words.mp3 speaks the English, then the Mandarin, for every Day 2 number.
+
+Day 3 (2026-10-06): family. Files use the day3- prefix.
+---------------------------------------------------------
+day3-01-ba4ba-dad.mp3
+  Chinese: 爸爸
+  Pinyin:  bàba
+  English: dad
+
+day3-02-ma1ma-mom.mp3
+  Chinese: 妈妈
+  Pinyin:  māma
+  English: mom
+
+day3-03-ge1ge-older-brother.mp3
+  Chinese: 哥哥
+  Pinyin:  gēge
+  English: older brother
+
+day3-04-jie3jie-older-sister.mp3
+  Chinese: 姐姐
+  Pinyin:  jiějie
+  English: older sister
+
+day3-05-di4di-younger-brother.mp3
+  Chinese: 弟弟
+  Pinyin:  dìdi
+  English: younger brother
+
+day3-06-mei4mei-younger-sister.mp3
+  Chinese: 妹妹
+  Pinyin:  mèimei
+  English: younger sister
+
+day3-07-er2zi-son.mp3
+  Chinese: 儿子
+  Pinyin:  érzi
+  English: son
+
+day3-08-nv3er2-daughter.mp3
+  Chinese: 女儿
+  Pinyin:  nǚ'ér
+  English: daughter
+
+day3-ALL-words.mp3 speaks the English, then the Mandarin, for every Day 3 word.

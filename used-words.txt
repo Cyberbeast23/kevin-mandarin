@@ -30,3 +30,14 @@
 八	bā	eight
 九	jiǔ	nine
 十	shí	ten
+
+# Day 3 (2026-10-06): family
+# Tone notes: doubled kinship words take a neutral second syllable (bàba, māma, gēge, jiějie, dìdi, mèimei); 子 in 儿子 is neutral. Introduced 两 liǎng before 个 in an example (not a headword).
+爸爸	bàba	dad
+妈妈	māma	mom
+哥哥	gēge	older brother
+姐姐	jiějie	older sister
+弟弟	dìdi	younger brother
+妹妹	mèimei	younger sister
+儿子	érzi	son
+女儿	nǚ'ér	daughter
