@@ -41,3 +41,14 @@
 妹妹	mèimei	younger sister
 儿子	érzi	son
 女儿	nǚ'ér	daughter
+
+# Day 4 (2026-10-07): food and drink
+# Tone notes: 喝 hē stays level (1st). 很好吃 hěn hǎochī: first of two 3rd tones rises in speech. 一杯 yì bēi (一 before 1st tone). Example-only extras (not headwords): 饭 fàn, 吃饭 chī fàn, 喜欢 xǐhuan, 要 yào, 给 gěi, 杯 bēi, 碗 wǎn, 很 hěn, 这个 zhège, 我们 wǒmen, 吧 ba.
+吃	chī	eat
+喝	hē	drink
+水	shuǐ	water
+茶	chá	tea
+咖啡	kāfēi	coffee
+米饭	mǐfàn	(cooked) rice
+面条	miàntiáo	noodles
+好吃	hǎochī	delicious, tasty
