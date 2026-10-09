@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mandarin (Oct. 9): Weather</title>
+<style>
+  body{font-family:"Segoe UI",Verdana,Arial,sans-serif;font-size:20px;line-height:1.6;margin:0;background:#f5f0eb;color:#2c2416}
+  .wrap{max-width:880px;margin:0 auto;padding:20px 18px 80px}
+  a.home{font-size:.9em;color:#bf360c}
+  h1{color:#e65100;font-size:2em;margin:10px 0}
+  h2{color:#ef6c00;margin-top:36px;border-bottom:3px solid #ffcc80;padding-bottom:4px}
+  h3{color:#ef6c00}
+  .box{background:#fff;border-radius:16px;padding:18px 22px;margin:16px 0;box-shadow:0 3px 10px rgba(0,0,0,.07)}
+  .tipbox{background:#fff8e1;border-left:8px solid #ffb300}
+  .char{font-size:2.2em;font-weight:bold;color:#e65100;line-height:1.2}
+  .jyut{font-family:Consolas,"Courier New",monospace;background:#fff3e0;padding:2px 8px;border-radius:8px;font-size:1.05em}
+  .card{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;align-items:center;border-left:8px solid #ef6c00;padding-left:14px}
+  .card .meta{grid-column:2}
+  .ex{margin-top:8px;background:#fff3e0;border-radius:10px;padding:8px 12px;font-size:.95em}
+  .q{border-left:8px solid #b0bec5}
+  .q.right{border-left-color:#43a047;background:#f1f8e9}
+  .q.wrong{border-left-color:#e53935;background:#fff5f5}
+  .opt{display:block;width:100%;text-align:left;font-size:.95em;background:#fafafa;border:2px solid #e0e0e0;border-radius:10px;padding:8px 14px;margin:8px 0;cursor:pointer;font-family:inherit}
+  .opt:hover{border-color:#ffb74d;background:#fff}
+  .opt.sel-right{background:#c8e6c9;border-color:#43a047}
+  .opt.sel-wrong{background:#ffcdd2;border-color:#e53935}
+  .fb{margin-top:6px;font-weight:bold}
+  .fb.good{color:#2e7d32} .fb.bad{color:#c62828}
+  .explain{font-weight:normal;color:#e65100}
+  .vrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:8px 6px;border-bottom:1px dashed #eee}
+  .vrow .w{font-weight:bold;min-width:120px;font-size:1.3em}
+  .vrow.right{background:#f1f8e9} .vrow.wrong{background:#fff5f5}
+  select{font-size:.95em;padding:6px 8px;border-radius:8px;border:2px solid #ffb74d;max-width:100%;font-family:inherit}
+  .mark{font-size:1.2em;min-width:30px}
+  button.main{font-size:1em;padding:10px 20px;border:none;border-radius:10px;cursor:pointer;font-weight:bold;background:#ef6c00;color:#fff;margin-top:10px}
+  button.main:hover{background:#e65100}
+  input[type=text]{font-size:1.05em;padding:8px 12px;border:2px solid #ffb74d;border-radius:10px;width:min(100%,320px);font-family:inherit}
+  button.check{font-size:.95em;padding:8px 16px;border:none;border-radius:10px;cursor:pointer;font-weight:bold;background:#ef6c00;color:#fff}
+  .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px}
+  #scoreBox{position:sticky;bottom:0;background:#e65100;color:#fff;border-radius:16px 16px 0 0;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-top:30px}
+  #scoreBox button{font-size:.95em;padding:8px 16px;border:none;border-radius:10px;cursor:pointer;font-weight:bold;background:#ffca28;color:#3e2723}
+  #final{display:none;text-align:center;border:4px solid #43a047;font-size:1.1em}
+  .tone{font-size:.85em;color:#ef6c00}
+
+  .audio-bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:12px 0 4px}
+  button.speak,button.record,button.play-mine,button.play-model,button.audio-ctrl{
+    font-size:1.05em;padding:14px 18px;min-height:52px;min-width:52px;
+    border:none;border-radius:14px;cursor:pointer;font-weight:bold;font-family:inherit;
+    touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+  }
+  button.speak,button.play-model,button.audio-ctrl.hear{background:#ef6c00;color:#fff}
+  button.speak:hover,button.play-model:hover,button.audio-ctrl.hear:hover{background:#e65100}
+  button.speak.playing{background:#43a047}
+  button.record{background:#e53935;color:#fff}
+  button.record:hover{background:#c62828}
+  button.record.recording{background:#ffca28;color:#3e2723;animation:pulse 1s infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+  button.play-mine{background:#00897b;color:#fff}
+  button.play-mine:hover{background:#00695c}
+  button.play-mine:disabled{opacity:.45;cursor:not-allowed}
+  button.audio-ctrl.stop{background:#546e7a;color:#fff}
+  button.audio-ctrl.stop:hover{background:#37474f}
+  .practice{margin-top:14px;padding-top:12px;border-top:2px dashed #ffcc80}
+  .practice-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .rec-status{margin-top:8px;font-weight:bold;color:#ef6c00;font-size:.95em}
+  .rec-status.rec-on{color:#c62828}
+  .mic-msg{margin-top:8px;background:#fff3e0;border-left:6px solid #ef6c00;border-radius:10px;padding:10px 14px;font-size:.95em;color:#e65100}
+  .box[data-audio]{position:relative}
+  button.ex-hear{font-size:.85em;padding:8px 12px;min-height:44px;min-width:44px;margin-left:6px;vertical-align:middle}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="home" href="../../index.html">&larr; Back to all lessons</a>
+<h1>🗣️ Mandarin Day 6: Weather 天气</h1>
+<p>Kevin, today is weather: hot and cold, rain and snow, sunny days, wind, and the umbrella every Vancouverite needs. Paired with yesterday's 今天, 明天 and 晚上, you can now chat about the forecast, which is the easiest small talk there is in any language. Eight words, each with a sentence you could say to a patient in the waiting room. Characters are <strong>Simplified Chinese</strong>. The pronunciation line is <strong>Hanyu Pinyin</strong> with tone marks.</p>
+
+<div class="box tipbox">
+  <strong>How to read the tones:</strong>
+  <ul>
+    <li><strong>1st</strong> ā high and flat · <strong>2nd</strong> á rising · <strong>3rd</strong> ǎ dipping · <strong>4th</strong> à falling. <strong>No mark</strong> means a short, light (neutral) syllable.</li>
+    <li><strong>气 is a full tone here:</strong> in 天气 <span class="jyut">tiānqì</span> the 气 is a clear falling 4th tone. Compare Day 1's 不客气 <span class="jyut">bú kèqi</span>, where the same 气 goes light and neutral.</li>
+    <li><strong>Weather "falls":</strong> 下 <span class="jyut">xià</span> means down, so 下雨 <span class="jyut">xià yǔ</span> is literally "fall rain" and 下雪 <span class="jyut">xià xuě</span> is "fall snow". Both are 4th then 3rd: drop, then dip.</li>
+    <li><strong>Two 3rd tones in a row:</strong> 雨伞 <span class="jyut">yǔsǎn</span> sounds like <span class="jyut">yúsǎn</span>, and 很冷 <span class="jyut">hěn lěng</span> sounds like <span class="jyut">hén lěng</span>. Same rule as 你好. Pinyin still writes the 3rd-tone marks.</li>
+    <li><strong>No "is" with adjectives:</strong> say 今天很热 (today very hot), not 今天是热. The 很 <span class="jyut">hěn</span> is there for rhythm and doesn't always mean "very". 是 <span class="jyut">shì</span> (is) only links two nouns: 今天是晴天, today is a sunny day.</li>
+    <li><strong>Handy extras in the examples:</strong> 是 <span class="jyut">shì</span> is, 了 <span class="jyut">le</span> marks something that already happened (下雪了 it snowed), 大 <span class="jyut">dà</span> big (风很大 is very windy), 没有 <span class="jyut">méiyǒu</span> don't have (have is never negated with 不). Today is Friday: 今天星期五.</li>
+  </ul>
+</div>
+
+<h2>Part 1: Learn Today's Words</h2>
+<div class="box tipbox" style="background:#fff3e0;border-left-color:#ef6c00"><strong>Listen &amp; practise:</strong> Tap <em>Hear model</em> for the phrase (Mainland Mandarin). Then tap <em>Record</em>, say it, and compare with <em>Play my try</em> and <em>Play model</em>. <em>Hear example</em> plays the short sentence.</div>
+<div class="audio-bar">
+  <button type="button" class="audio-ctrl hear" id="playAll">🔊 Play all words</button>
+  <button type="button" class="audio-ctrl stop" id="stopAudio">⏹️ Stop</button>
+  <span class="tone">Plays every weather word with the English first.</span>
+</div>
+<div id="cards"></div>
+
+<h2>Part 2: Match the Meaning</h2>
+<div class="box">
+  <p>Match each Mandarin phrase to its English meaning.</p>
+  <div id="vmatch"></div>
+  <button type="button" class="main" id="checkMatch">Check my matching</button>
+  <div class="fb" id="matchFb"></div>
+</div>
+
+<h2>Part 3: What Would You Say?</h2>
+<p>Click the best Mandarin phrase for each situation. Only your <strong>first click</strong> counts toward your score.</p>
+<div id="mc"></div>
+
+<h2>Part 4: Type the Pinyin</h2>
+<p>Look at the characters and type Hanyu Pinyin. Tone marks (<span class="jyut">tiānqì</span>) or tone numbers (<span class="jyut">tian1 qi4</span>) both count. Neutral syllables get no mark and no number (<span class="jyut">xia4 yu3 le</span>). Spaces between syllables are fine. The last two are mini phrases built from today's words.</p>
+<div id="fill"></div>
+
+<div class="box" id="final"></div>
+<div id="scoreBox">
+  <span id="scoreText"></span>
+  <button type="button" id="finishBtn">I'm done! Show my final score</button>
+</div>
+</div>
+
+<script src="../../audio/mandarin/player.js"></script>
+<script>
+var WORDS = [
+ {zh:"天气", py:"tiānqì", audio:"day6-01-tian1qi4-weather.mp3", en:"weather",
+  ex_zh:"今天天气很好。", ex_py:"Jīntiān tiānqì hěn hǎo.", ex_en:"The weather is great today.",
+  ex_audio:"day6-01-tian1qi4-weather-ex.mp3"},
+ {zh:"热", py:"rè", audio:"day6-02-re4-hot.mp3", en:"hot",
+  ex_zh:"今天很热。", ex_py:"Jīntiān hěn rè.", ex_en:"It's very hot today.",
+  ex_audio:"day6-02-re4-hot-ex.mp3"},
+ {zh:"冷", py:"lěng", audio:"day6-03-leng3-cold.mp3", en:"cold",
+  ex_zh:"晚上很冷。", ex_py:"Wǎnshang hěn lěng.", ex_en:"It's cold in the evening.",
+  ex_audio:"day6-03-leng3-cold-ex.mp3"},
+ {zh:"下雨", py:"xià yǔ", audio:"day6-04-xia4yu3-rain.mp3", en:"to rain",
+  ex_zh:"明天下雨吗？", ex_py:"Míngtiān xià yǔ ma?", ex_en:"Will it rain tomorrow?",
+  ex_audio:"day6-04-xia4yu3-rain-ex.mp3"},
+ {zh:"晴天", py:"qíngtiān", audio:"day6-05-qing2tian1-sunny-day.mp3", en:"sunny day",
+  ex_zh:"今天是晴天。", ex_py:"Jīntiān shì qíngtiān.", ex_en:"Today is a sunny day.",
+  ex_audio:"day6-05-qing2tian1-sunny-day-ex.mp3"},
+ {zh:"下雪", py:"xià xuě", audio:"day6-06-xia4xue3-snow.mp3", en:"to snow",
+  ex_zh:"昨天下雪了。", ex_py:"Zuótiān xià xuě le.", ex_en:"It snowed yesterday.",
+  ex_audio:"day6-06-xia4xue3-snow-ex.mp3"},
+ {zh:"风", py:"fēng", audio:"day6-07-feng1-wind.mp3", en:"wind",
+  ex_zh:"今天风很大。", ex_py:"Jīntiān fēng hěn dà.", ex_en:"It's very windy today.",
+  ex_audio:"day6-07-feng1-wind-ex.mp3"},
+ {zh:"雨伞", py:"yǔsǎn", audio:"day6-08-yu3san3-umbrella.mp3", en:"umbrella",
+  ex_zh:"我没有雨伞。", ex_py:"Wǒ méiyǒu yǔsǎn.", ex_en:"I don't have an umbrella.",
+  ex_audio:"day6-08-yu3san3-umbrella-ex.mp3"}
+];
+
+var PRAISE=["Nice work, Kevin!","正确！ Correct!","Yes — tones and all.","Excellent, Kevin!","Right. Say it once more out loud.","晴天！ Sunny work!"];
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function shuffled(arr,seed){var a=arr.slice(),s=seed;for(var i=a.length-1;i>0;i--){s=(s*9301+49297)%233280;var j=Math.floor(s/233280*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+function buildCards(){
+  var box=document.getElementById("cards");
+  WORDS.forEach(function(w,i){
+    var d=document.createElement("div"); d.className="box";
+    if(w.audio){ d.setAttribute("data-audio", w.audio); d.setAttribute("data-audio-label", w.zh+" "+w.py); }
+    d.innerHTML='<div class="card">'+
+      '<div class="char">'+(i+1)+'. '+w.zh+'</div>'+
+      '<div class="meta"><div><span class="jyut">'+w.py+'</span> <span class="tone">← tap Hear model, then Record</span></div>'+
+      '<div><strong>'+w.en+'</strong></div></div></div>'+
+      '<div class="ex"><strong>Example:</strong> '+w.ex_zh+
+      ' <button type="button" class="speak ex-hear" data-file="'+w.ex_audio+'">🔊 Hear example</button><br>'+
+      '<span class="jyut">'+w.ex_py+'</span><br><em>'+w.ex_en+'</em></div>'+
+      '<div class="practice"></div>';
+    box.appendChild(d);
+  });
+  box.addEventListener("click", function(e){
+    var b=e.target.closest ? e.target.closest(".ex-hear") : null;
+    if(!b || !window.KevinMandarinAudio) return;
+    e.preventDefault();
+    KevinMandarinAudio.play(b.getAttribute("data-file"));
+  });
+}
+
+var matchScore=0, matchChecked=false;
+function buildMatch(){
+  var m=document.getElementById("vmatch");
+  var order=shuffled(WORDS.map(function(w){return w.py;}),71);
+  WORDS.forEach(function(w,i){
+    var row=document.createElement("div"); row.className="vrow"; row.id="vm"+i;
+    var sel='<select id="vsel'+i+'" aria-label="Meaning of '+w.zh+'"><option value="">- choose English -</option>';
+    order.forEach(function(py){
+      var en=WORDS.find(function(x){return x.py===py;}).en;
+      sel+='<option value="'+py+'">'+en+'</option>';
+    });
+    sel+='</select>';
+    row.innerHTML='<span class="mark" id="vmk'+i+'"></span><span class="w">'+w.zh+'</span><span class="jyut">'+w.py+'</span>'+sel;
+    m.appendChild(row);
+  });
+}
+function checkMatch(){
+  var score=0, blank=0;
+  WORDS.forEach(function(w,i){
+    var v=document.getElementById("vsel"+i).value, ok=(v===w.py);
+    if(!v) blank++;
+    if(ok) score++;
+    document.getElementById("vm"+i).className="vrow "+(ok?"right":"wrong");
+    document.getElementById("vmk"+i).textContent=ok?"✅":"❌";
+  });
+  matchScore=score; matchChecked=true;
+  var fb=document.getElementById("matchFb");
+  if(score===WORDS.length){ fb.className="fb good"; fb.textContent="🌟 "+score+" / "+WORDS.length+". Perfect matching, Kevin!"; }
+  else { fb.className="fb bad"; fb.textContent=score+" / "+WORDS.length+" correct"+(blank?" ("+blank+" blank)":"")+". Fix the ❌ ones and check again."; }
+  updateScore();
+}
+
+var MC = [
+ {q:"A patient says 今天很冷。 What are they telling you?",
+  o:["It's very hot today.","It's cold today.","It's raining today.","It's windy today."], a:1,
+  e:"冷 (lěng) is cold. 热 (rè) would be hot. 很 just carries the rhythm here."},
+ {q:"You want to ask if it will rain tomorrow. Which sentence works?",
+  o:["昨天下雨了。","今天是晴天。","明天下雨吗？","晚上很冷。"], a:2,
+  e:"明天下雨吗？ (Míngtiān xià yǔ ma?) is Will it rain tomorrow? 吗 makes it a yes/no question."},
+ {q:"Which sentence is correct for <strong>It's hot today</strong>?",
+  o:["今天是热。","今天很热。","今天热是。","热今天很。"], a:1,
+  e:"Adjectives don't take 是. Say 今天很热 (Jīntiān hěn rè)."},
+ {q:"How do you say <strong>It snowed yesterday</strong>?",
+  o:["昨天下雪了。","明天下雪。","昨天下雨了。","今天下雪吗？"], a:0,
+  e:"昨天 (zuótiān) is yesterday, 下雪 (xià xuě) is to snow, and 了 (le) shows it already happened."},
+ {q:"风很大 literally says the wind is big. What does it mean?",
+  o:["It's a sunny day.","It's very windy.","It's very cold.","There's a storm tomorrow."], a:1,
+  e:"风 (fēng) is wind and 大 (dà) is big, so 风很大 is It's very windy."},
+ {q:"You forgot your umbrella. What do you say?",
+  o:["我没有雨伞。","我不有雨伞。","我有雨伞。","雨伞很热。"], a:0,
+  e:"有 (have) is negated with 没, never 不: 我没有雨伞 (Wǒ méiyǒu yǔsǎn), I don't have an umbrella."},
+ {q:"Which pinyin is right for 晴天 (sunny day)?",
+  o:["qīngtiān","qíngtiān","qǐngtiān","qìngtián"], a:1,
+  e:"晴天 is qíngtiān: rising 2nd, then flat 1st. Don't mix it up with Day 1's 请 qǐng (please), which dips."},
+ {q:"How does 雨伞 (yǔsǎn) actually sound in speech?",
+  o:["yǔsǎn, both dipping","yúsǎn, the first one rises","yùsàn, both falling","yūsān, both flat"], a:1,
+  e:"Two 3rd tones in a row: the first rises, so it sounds like yúsǎn. Pinyin still writes yǔsǎn."}
+];
+var mcState=MC.map(function(){return{answered:false,firstRight:false,done:false};});
+function buildMC(){
+  var box=document.getElementById("mc");
+  MC.forEach(function(item,i){
+    var d=document.createElement("div"); d.className="box q"; d.id="mc"+i;
+    var html="<div><strong>"+(i+1)+".</strong> "+item.q+"</div>";
+    item.o.forEach(function(opt,j){ html+='<button type="button" class="opt" data-i="'+i+'" data-j="'+j+'">'+String.fromCharCode(65+j)+". "+opt+"</button>"; });
+    html+='<div class="fb" id="mcfb'+i+'"></div>';
+    d.innerHTML=html; box.appendChild(d);
+  });
+  box.addEventListener("click",function(e){
+    var b=e.target.closest?e.target.closest(".opt"):e.target; if(!b||!b.classList.contains("opt"))return;
+    var i=+b.getAttribute("data-i"), j=+b.getAttribute("data-j"), st=mcState[i], item=MC[i];
+    if(st.done)return;
+    var right=(j===item.a);
+    if(!st.answered){ st.answered=true; st.firstRight=right; }
+    var fb=document.getElementById("mcfb"+i), card=document.getElementById("mc"+i);
+    if(right){ st.done=true; b.classList.add("sel-right"); card.className="box q right"; fb.className="fb good"; fb.innerHTML="✅ "+pick(PRAISE)+' <span class="explain">'+item.e+"</span>"; }
+    else { b.classList.add("sel-wrong"); card.className="box q wrong"; fb.className="fb bad"; fb.textContent="❌ Not quite, Kevin. Look back at Part 1 and try again."; }
+    updateScore();
+  });
+}
+
+var FILL = [
+ {zh:"天气", accept:["tian1 qi4"], show:"tiānqì"},
+ {zh:"热", accept:["re4"], show:"rè"},
+ {zh:"冷", accept:["leng3"], show:"lěng"},
+ {zh:"下雨", accept:["xia4 yu3"], show:"xià yǔ"},
+ {zh:"晴天", accept:["qing2 tian1"], show:"qíngtiān"},
+ {zh:"下雪", accept:["xia4 xue3"], show:"xià xuě"},
+ {zh:"风", accept:["feng1"], show:"fēng"},
+ {zh:"雨伞", accept:["yu3 san3"], show:"yǔsǎn"},
+ {zh:"很冷", accept:["hen3 leng3"], show:"hěn lěng"},
+ {zh:"下雨了", accept:["xia4 yu3 le"], show:"xià yǔ le"}
+];
+var fillState=FILL.map(function(){return{correct:false,tries:0};});
+
+var SYL_SRC = "a ai an ang ao ba bai ban bang bao bei ben beng bi bian biao bie bin bing bo bu ca cai can cang cao ce cen ceng cha chai chan chang chao che chen cheng chi chong chou chu chua chuai chuan chuang chui chun chuo ci cong cou cu cuan cui cun cuo da dai dan dang dao de dei den deng di dia dian diao die ding diu dong dou du duan dui dun duo e ei en eng er fa fan fang fei fen feng fo fou fu ga gai gan gang gao ge gei gen geng gong gou gu gua guai guan guang gui gun guo ha hai han hang hao he hei hen heng hong hou hu hua huai huan huang hui hun huo ji jia jian jiang jiao jie jin jing jiong jiu ju juan jue jun ka kai kan kang kao ke ken keng kong kou ku kua kuai kuan kuang kui kun kuo la lai lan lang lao le lei leng li lia lian liang liao lie lin ling liu lo long lou lu lv luan lve lun luo ma mai man mang mao me mei men meng mi mian miao mie min ming miu mo mou mu na nai nan nang nao ne nei nen neng ni nian niang niao nie nin ning niu nong nou nu nv nuan nve nuo o ou pa pai pan pang pao pei pen peng pi pian piao pie pin ping po pou pu qi qia qian qiang qiao qie qin qing qiong qiu qu quan que qun ran rang rao re ren reng ri rong rou ru rua ruan rui run ruo sa sai san sang sao se sen seng sha shai shan shang shao she shei shen sheng shi shou shu shua shuai shuan shuang shui shun shuo si song sou su suan sui sun suo ta tai tan tang tao te teng ti tian tiao tie ting tong tou tu tuan tui tun tuo wa wai wan wang wei wen weng wo wu xi xia xian xiang xiao xie xin xing xiong xiu xu xuan xue xun ya yan yang yao ye yi yin ying yo yong you yu yuan yue yun za zai zan zang zao ze zei zen zeng zha zhai zhan zhang zhao zhe zhei zhen zheng zhi zhong zhou zhu zhua zhuai zhuan zhuang zhui zhun zhuo zi zong zou zu zuan zui zun zuo";
+var SYLS = SYL_SRC.split(/\s+/);
+SYLS.sort(function(a,b){ return b.length - a.length || (a < b ? -1 : 1); });
+
+function normPy(s){
+  if(s==null) return null;
+  var map = {"ā":"a1","á":"a2","ǎ":"a3","à":"a4","ē":"e1","é":"e2","ě":"e3","è":"e4","ī":"i1","í":"i2","ǐ":"i3","ì":"i4","ō":"o1","ó":"o2","ǒ":"o3","ò":"o4","ū":"u1","ú":"u2","ǔ":"u3","ù":"u4","ǖ":"v1","ǘ":"v2","ǚ":"v3","ǜ":"v4","ü":"v"};
+  var raw = String(s).trim().toLowerCase();
+  if(raw.normalize) raw = raw.normalize("NFC");
+  raw = raw.replace(/u:/g,"ü");
+  var tmp = "";
+  for(var i=0;i<raw.length;i++){
+    tmp += (map[raw.charAt(i)]!==undefined) ? map[raw.charAt(i)] : raw.charAt(i);
+  }
+  raw = tmp.replace(/[^a-z0-5]+/g,"");
+  if(!raw) return null;
+  function matchAt(pos){
+    var res=[];
+    for(var s=0;s<SYLS.length;s++){
+      var syl = SYLS[s], j = pos, k = 0, tone = "", ok = true;
+      while(k < syl.length){
+        if(j >= raw.length){ ok = false; break; }
+        var ch = raw.charAt(j);
+        if(ch >= "0" && ch <= "5"){
+          if(tone){ ok = false; break; }
+          tone = ch; j++; continue;
+        }
+        if(ch !== syl.charAt(k)){ ok = false; break; }
+        j++; k++;
+      }
+      if(!ok || k !== syl.length) continue;
+      if(j < raw.length){
+        var nxt = raw.charAt(j);
+        if(nxt >= "0" && nxt <= "5"){
+          if(tone) continue;
+          tone = nxt; j++;
+        }
+      }
+      res.push({end:j, syl:syl, tone:tone});
+    }
+    return res;
+  }
+  function parse(pos){
+    if(pos >= raw.length) return [];
+    var c = matchAt(pos);
+    for(var i=0;i<c.length;i++){
+      var rest = parse(c[i].end);
+      if(rest){
+        var t = c[i].tone; if(t === "5" || t === "0") t = "";
+        return [c[i].syl + t].concat(rest);
+      }
+    }
+    return null;
+  }
+  var out = parse(0);
+  if(!out) return null;
+  return out.join(" ");
+}
+
+function buildFill(){
+  var box=document.getElementById("fill");
+  FILL.forEach(function(it,i){
+    var d=document.createElement("div"); d.className="box q"; d.id="f"+i;
+    d.innerHTML='<div><strong>'+(i+1)+'.</strong> Type pinyin for <span class="char" style="font-size:1.4em">'+it.zh+'</span></div>'+
+      '<div class="row"><input type="text" id="fi'+i+'" autocomplete="off" spellcheck="false" aria-label="Pinyin for '+it.zh+'">'+
+      '<button type="button" class="check" data-i="'+i+'">Check</button></div><div class="fb" id="ffb'+i+'"></div>';
+    box.appendChild(d);
+  });
+  box.addEventListener("click",function(e){
+    var b=e.target; if(b.tagName!=="BUTTON"||!b.classList.contains("check"))return;
+    fillCheck(+b.getAttribute("data-i"));
+  });
+  box.addEventListener("keydown",function(e){if(e.key==="Enter"&&e.target.tagName==="INPUT")fillCheck(+e.target.id.slice(2));});
+}
+function fillCheck(i){
+  var val=document.getElementById("fi"+i).value, fb=document.getElementById("ffb"+i), st=fillState[i];
+  if(!val.trim()){fb.className="fb bad";fb.textContent="Type the pinyin first.";return;}
+  st.tries++;
+  var got = normPy(val);
+  var ok = !!got && FILL[i].accept.indexOf(got) !== -1;
+  if(ok){
+    st.correct=true; document.getElementById("f"+i).className="box q right";
+    fb.className="fb good"; fb.textContent="✅ "+pick(PRAISE)+(st.tries===1?" (first try!)":"")+" "+FILL[i].show;
+  } else {
+    st.correct=false; document.getElementById("f"+i).className="box q wrong";
+    fb.className="fb bad";
+    fb.textContent = got ? "❌ Not quite. Check every tone. A form that works: "+FILL[i].show+" or tone numbers."
+                         : "❌ Could not read that as pinyin. Try tone marks (tiānqì) or numbers (tian1 qi4).";
+  }
+  updateScore();
+}
+
+function scores(){
+  var mc=0; mcState.forEach(function(s){if(s.firstRight)mc++;});
+  var f=0; fillState.forEach(function(s){if(s.correct)f++;});
+  return {match:matchScore, mc:mc, fill:f};
+}
+function updateScore(){
+  var s=scores();
+  document.getElementById("scoreText").textContent="Match: "+(matchChecked?s.match:"-")+"/"+WORDS.length+" · Situations: "+s.mc+"/"+MC.length+" · Pinyin: "+s.fill+"/"+FILL.length;
+}
+function finish(){
+  if(!matchChecked) checkMatch();
+  var s=scores(), total=WORDS.length+MC.length+FILL.length, got=s.match+s.mc+s.fill, pct=Math.round(100*got/total);
+  var msg = pct===100 ? "🏆 完美！ Perfect score, Kevin. You can talk about the weather in Mandarin." :
+            pct>=80 ? "🌟 Strong work. Next time you look outside, say it out loud: 今天很……" :
+            pct>=60 ? "💪 Solid effort. Review the cards and retry the ❌ ones." :
+                      "🌱 Weather words take a few passes. Play all words, say each one three times, then retry.";
+  var f=document.getElementById("final"); f.style.display="block";
+  f.innerHTML="<h2 style='border:none;margin-top:0'>Final Score: "+got+" / "+total+" ("+pct+"%)</h2>"+
+    "<p>Matching: "+s.match+"/"+WORDS.length+" · Situations (first try): "+s.mc+"/"+MC.length+" · Pinyin typing: "+s.fill+"/"+FILL.length+"</p><p>"+msg+"</p>"+
+    "<p style='font-size:.85em;color:#ef6c00'>Finished on "+new Date().toLocaleString("en-CA",{timeZone:"America/Vancouver"})+" PT</p>";
+  f.scrollIntoView({behavior:"smooth"});
+}
+buildCards(); buildMatch(); buildMC(); buildFill(); updateScore();
+if(window.KevinMandarinAudio) KevinMandarinAudio.wireLesson({playAllBtn:"#playAll",stopBtn:"#stopAudio",allFile:"day6-ALL-words.mp3"});
+document.getElementById("checkMatch").addEventListener("click",checkMatch);
+document.getElementById("finishBtn").addEventListener("click",finish);
+</script>
+</body>
+</html>

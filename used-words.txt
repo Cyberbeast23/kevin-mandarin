@@ -63,3 +63,14 @@
 星期	xīngqī	week
 晚上	wǎnshang	evening, night
 时间	shíjiān	time
+
+# Day 6 (2026-10-09): weather
+# Tone notes: 天气 tiānqì: 气 is a full 4th here (neutral only in 不客气). 雨伞 yǔsǎn and 很冷 hěn lěng: first of two 3rd tones rises in speech. 下 xià = fall (下雨, 下雪). Adjectives take 很, not 是. Example-only extras (not headwords): 是 shì, 了 le, 大 dà, 没有 méiyǒu, 很好 hěn hǎo, 星期五 xīngqīwǔ.
+天气	tiānqì	weather
+热	rè	hot
+冷	lěng	cold
+下雨	xià yǔ	to rain
+晴天	qíngtiān	sunny day
+下雪	xià xuě	to snow
+风	fēng	wind
+雨伞	yǔsǎn	umbrella
