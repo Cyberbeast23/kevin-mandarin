@@ -52,3 +52,14 @@
 米饭	mǐfàn	(cooked) rice
 面条	miàntiáo	noodles
 好吃	hǎochī	delicious, tasty
+
+# Day 5 (2026-10-08): time and days
+# Tone notes: 几点 jǐ diǎn: first 3rd tone rises in speech (jí diǎn). 晚上 wǎnshang: 上 neutral. 一个星期 yí ge xīngqī (一 before underlying 4th-tone 个). Days of the week = 星期 + 一…六; Sunday 星期天/星期日. Example-only extras (not headwords): 星期四 xīngqīsì, 见 jiàn, 忙 máng, 有 yǒu, 吗 ma, 天 tiān, 点 diǎn, 八点 bā diǎn, 吃饭 chī fàn.
+今天	jīntiān	today
+明天	míngtiān	tomorrow
+昨天	zuótiān	yesterday
+现在	xiànzài	now
+几点	jǐ diǎn	what time
+星期	xīngqī	week
+晚上	wǎnshang	evening, night
+时间	shíjiān	time
