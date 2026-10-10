@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mandarin (Oct. 10): Shopping</title>
+<style>
+  body{font-family:"Segoe UI",Verdana,Arial,sans-serif;font-size:20px;line-height:1.6;margin:0;background:#f5f0eb;color:#2c2416}
+  .wrap{max-width:880px;margin:0 auto;padding:20px 18px 80px}
+  a.home{font-size:.9em;color:#bf360c}
+  h1{color:#e65100;font-size:2em;margin:10px 0}
+  h2{color:#ef6c00;margin-top:36px;border-bottom:3px solid #ffcc80;padding-bottom:4px}
+  h3{color:#ef6c00}
+  .box{background:#fff;border-radius:16px;padding:18px 22px;margin:16px 0;box-shadow:0 3px 10px rgba(0,0,0,.07)}
+  .tipbox{background:#fff8e1;border-left:8px solid #ffb300}
+  .char{font-size:2.2em;font-weight:bold;color:#e65100;line-height:1.2}
+  .jyut{font-family:Consolas,"Courier New",monospace;background:#fff3e0;padding:2px 8px;border-radius:8px;font-size:1.05em}
+  .card{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;align-items:center;border-left:8px solid #ef6c00;padding-left:14px}
+  .card .meta{grid-column:2}
+  .ex{margin-top:8px;background:#fff3e0;border-radius:10px;padding:8px 12px;font-size:.95em}
+  .q{border-left:8px solid #b0bec5}
+  .q.right{border-left-color:#43a047;background:#f1f8e9}
+  .q.wrong{border-left-color:#e53935;background:#fff5f5}
+  .opt{display:block;width:100%;text-align:left;font-size:.95em;background:#fafafa;border:2px solid #e0e0e0;border-radius:10px;padding:8px 14px;margin:8px 0;cursor:pointer;font-family:inherit}
+  .opt:hover{border-color:#ffb74d;background:#fff}
+  .opt.sel-right{background:#c8e6c9;border-color:#43a047}
+  .opt.sel-wrong{background:#ffcdd2;border-color:#e53935}
+  .fb{margin-top:6px;font-weight:bold}
+  .fb.good{color:#2e7d32} .fb.bad{color:#c62828}
+  .explain{font-weight:normal;color:#e65100}
+  .vrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:8px 6px;border-bottom:1px dashed #eee}
+  .vrow .w{font-weight:bold;min-width:120px;font-size:1.3em}
+  .vrow.right{background:#f1f8e9} .vrow.wrong{background:#fff5f5}
+  select{font-size:.95em;padding:6px 8px;border-radius:8px;border:2px solid #ffb74d;max-width:100%;font-family:inherit}
+  .mark{font-size:1.2em;min-width:30px}
+  button.main{font-size:1em;padding:10px 20px;border:none;border-radius:10px;cursor:pointer;font-weight:bold;background:#ef6c00;color:#fff;margin-top:10px}
+  button.main:hover{background:#e65100}
+  input[type=text]{font-size:1.05em;padding:8px 12px;border:2px solid #ffb74d;border-radius:10px;width:min(100%,320px);font-family:inherit}
+  button.check{font-size:.95em;padding:8px 16px;border:none;border-radius:10px;cursor:pointer;font-weight:bold;background:#ef6c00;color:#fff}
+  .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px}
+  #scoreBox{position:sticky;bottom:0;background:#e65100;color:#fff;border-radius:16px 16px 0 0;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-top:30px}
+  #scoreBox button{font-size:.95em;padding:8px 16px;border:none;border-radius:10px;cursor:pointer;font-weight:bold;background:#ffca28;color:#3e2723}
+  #final{display:none;text-align:center;border:4px solid #43a047;font-size:1.1em}
+  .tone{font-size:.85em;color:#ef6c00}
+
+  .audio-bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:12px 0 4px}
+  button.speak,button.record,button.play-mine,button.play-model,button.audio-ctrl{
+    font-size:1.05em;padding:14px 18px;min-height:52px;min-width:52px;
+    border:none;border-radius:14px;cursor:pointer;font-weight:bold;font-family:inherit;
+    touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+  }
+  button.speak,button.play-model,button.audio-ctrl.hear{background:#ef6c00;color:#fff}
+  button.speak:hover,button.play-model:hover,button.audio-ctrl.hear:hover{background:#e65100}
+  button.speak.playing{background:#43a047}
+  button.record{background:#e53935;color:#fff}
+  button.record:hover{background:#c62828}
+  button.record.recording{background:#ffca28;color:#3e2723;animation:pulse 1s infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+  button.play-mine{background:#00897b;color:#fff}
+  button.play-mine:hover{background:#00695c}
+  button.play-mine:disabled{opacity:.45;cursor:not-allowed}
+  button.audio-ctrl.stop{background:#546e7a;color:#fff}
+  button.audio-ctrl.stop:hover{background:#37474f}
+  .practice{margin-top:14px;padding-top:12px;border-top:2px dashed #ffcc80}
+  .practice-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .rec-status{margin-top:8px;font-weight:bold;color:#ef6c00;font-size:.95em}
+  .rec-status.rec-on{color:#c62828}
+  .mic-msg{margin-top:8px;background:#fff3e0;border-left:6px solid #ef6c00;border-radius:10px;padding:10px 14px;font-size:.95em;color:#e65100}
+  .box[data-audio]{position:relative}
+  button.ex-hear{font-size:.85em;padding:8px 12px;min-height:44px;min-width:44px;margin-left:6px;vertical-align:middle}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="home" href="../../index.html">&larr; Back to all lessons</a>
+<h1>🗣️ Mandarin Day 7: Shopping 买东西</h1>
+<p>Kevin, today is shopping: buying, money, asking the price, and deciding if it's a bargain or a rip-off. Your Day 2 numbers come back to life here, because 五块 is five yuan and 十块 is ten. Put it together with Day 4's 茶 and 咖啡 and you can order a drink and pay for it. Eight words, each with a sentence you could use at a shop counter or a café. Characters are <strong>Simplified Chinese</strong>. The pronunciation line is <strong>Hanyu Pinyin</strong> with tone marks.</p>
+
+<div class="box tipbox">
+  <strong>How to read the tones:</strong>
+  <ul>
+    <li><strong>1st</strong> ā high and flat · <strong>2nd</strong> á rising · <strong>3rd</strong> ǎ dipping · <strong>4th</strong> à falling. <strong>No mark</strong> means a short, light (neutral) syllable.</li>
+    <li><strong>买 vs 卖:</strong> 买 <span class="jyut">mǎi</span> (dipping 3rd) is buy. Its twin 卖 <span class="jyut">mài</span> (falling 4th) is sell, with an extra stroke on top. Only the tone tells them apart out loud, so dip clearly on 买.</li>
+    <li><strong>便宜 is not "biàn":</strong> 便 is usually <span class="jyut">biàn</span> (convenient), but in 便宜 it reads <span class="jyut">pián</span>, and 宜 goes light: <span class="jyut">piányi</span>.</li>
+    <li><strong>多少 goes light:</strong> in everyday 多少钱 the 少 is soft, <span class="jyut">duōshao qián</span>. You'll also hear a full <span class="jyut">duōshǎo</span>; both are fine.</li>
+    <li><strong>块 = yuan, casually:</strong> prices are written 元 <span class="jyut">yuán</span> but spoken as 块 <span class="jyut">kuài</span>, like saying "bucks". Number first: 五块 <span class="jyut">wǔ kuài</span>, five yuan.</li>
+    <li><strong>一 changes again:</strong> before 杯 <span class="jyut">bēi</span> (a 1st tone) 一 becomes <span class="jyut">yì</span>, so 一杯茶 is <span class="jyut">yì bēi chá</span>, one cup of tea. Same rule as Day 2.</li>
+    <li><strong>Handy extras in the examples:</strong> 这个 <span class="jyut">zhège</span> this one, 太…了 <span class="jyut">tài … le</span> too (much), 在 <span class="jyut">zài</span> is at, 哪儿 <span class="jyut">nǎr</span> where, 杯 <span class="jyut">bēi</span> cup. Today is Saturday: 今天星期六.</li>
+  </ul>
+</div>
+
+<h2>Part 1: Learn Today's Words</h2>
+<div class="box tipbox" style="background:#fff3e0;border-left-color:#ef6c00"><strong>Listen &amp; practise:</strong> Tap <em>Hear model</em> for the phrase (Mainland Mandarin). Then tap <em>Record</em>, say it, and compare with <em>Play my try</em> and <em>Play model</em>. <em>Hear example</em> plays the short sentence.</div>
+<div class="audio-bar">
+  <button type="button" class="audio-ctrl hear" id="playAll">🔊 Play all words</button>
+  <button type="button" class="audio-ctrl stop" id="stopAudio">⏹️ Stop</button>
+  <span class="tone">Plays every shopping word with the English first.</span>
+</div>
+<div id="cards"></div>
+
+<h2>Part 2: Match the Meaning</h2>
+<div class="box">
+  <p>Match each Mandarin phrase to its English meaning.</p>
+  <div id="vmatch"></div>
+  <button type="button" class="main" id="checkMatch">Check my matching</button>
+  <div class="fb" id="matchFb"></div>
+</div>
+
+<h2>Part 3: What Would You Say?</h2>
+<p>Click the best Mandarin phrase for each situation. Only your <strong>first click</strong> counts toward your score.</p>
+<div id="mc"></div>
+
+<h2>Part 4: Type the Pinyin</h2>
+<p>Look at the characters and type Hanyu Pinyin. Tone marks (<span class="jyut">shāngdiàn</span>) or tone numbers (<span class="jyut">shang1 dian4</span>) both count. Neutral syllables get no mark and no number (<span class="jyut">pian2 yi</span>). Spaces between syllables are fine. The last two are mini phrases built from today's words.</p>
+<div id="fill"></div>
+
+<div class="box" id="final"></div>
+<div id="scoreBox">
+  <span id="scoreText"></span>
+  <button type="button" id="finishBtn">I'm done! Show my final score</button>
+</div>
+</div>
+
+<script src="../../audio/mandarin/player.js"></script>
+<script>
+var WORDS = [
+ {zh:"买", py:"mǎi", audio:"day7-01-mai3-buy.mp3", en:"to buy",
+  ex_zh:"我要买雨伞。", ex_py:"Wǒ yào mǎi yǔsǎn.", ex_en:"I want to buy an umbrella.",
+  ex_audio:"day7-01-mai3-buy-ex.mp3"},
+ {zh:"钱", py:"qián", audio:"day7-02-qian2-money.mp3", en:"money",
+  ex_zh:"我没有钱。", ex_py:"Wǒ méiyǒu qián.", ex_en:"I don't have any money.",
+  ex_audio:"day7-02-qian2-money-ex.mp3"},
+ {zh:"多少钱", py:"duōshao qián", audio:"day7-03-duo1shaoqian2-how-much.mp3", en:"how much (money)",
+  ex_zh:"这个多少钱？", ex_py:"Zhège duōshao qián?", ex_en:"How much is this?",
+  ex_audio:"day7-03-duo1shaoqian2-how-much-ex.mp3"},
+ {zh:"块", py:"kuài", audio:"day7-04-kuai4-yuan.mp3", en:"yuan (spoken, like \"bucks\")",
+  ex_zh:"咖啡五块。", ex_py:"Kāfēi wǔ kuài.", ex_en:"The coffee is five yuan.",
+  ex_audio:"day7-04-kuai4-yuan-ex.mp3"},
+ {zh:"贵", py:"guì", audio:"day7-05-gui4-expensive.mp3", en:"expensive",
+  ex_zh:"太贵了！", ex_py:"Tài guì le!", ex_en:"That's too expensive!",
+  ex_audio:"day7-05-gui4-expensive-ex.mp3"},
+ {zh:"便宜", py:"piányi", audio:"day7-06-pian2yi-cheap.mp3", en:"cheap",
+  ex_zh:"茶很便宜。", ex_py:"Chá hěn piányi.", ex_en:"Tea is cheap.",
+  ex_audio:"day7-06-pian2yi-cheap-ex.mp3"},
+ {zh:"商店", py:"shāngdiàn", audio:"day7-07-shang1dian4-store.mp3", en:"shop, store",
+  ex_zh:"商店在哪儿？", ex_py:"Shāngdiàn zài nǎr?", ex_en:"Where is the store?",
+  ex_audio:"day7-07-shang1dian4-store-ex.mp3"},
+ {zh:"要", py:"yào", audio:"day7-08-yao4-want.mp3", en:"to want, would like",
+  ex_zh:"我要一杯茶。", ex_py:"Wǒ yào yì bēi chá.", ex_en:"I'd like a cup of tea.",
+  ex_audio:"day7-08-yao4-want-ex.mp3"}
+];
+
+var PRAISE=["Nice work, Kevin!","正确！ Correct!","Yes — tones and all.","Excellent, Kevin!","Right. Say it once more out loud.","很便宜！ What a bargain!"];
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function shuffled(arr,seed){var a=arr.slice(),s=seed;for(var i=a.length-1;i>0;i--){s=(s*9301+49297)%233280;var j=Math.floor(s/233280*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+function buildCards(){
+  var box=document.getElementById("cards");
+  WORDS.forEach(function(w,i){
+    var d=document.createElement("div"); d.className="box";
+    if(w.audio){ d.setAttribute("data-audio", w.audio); d.setAttribute("data-audio-label", w.zh+" "+w.py); }
+    d.innerHTML='<div class="card">'+
+      '<div class="char">'+(i+1)+'. '+w.zh+'</div>'+
+      '<div class="meta"><div><span class="jyut">'+w.py+'</span> <span class="tone">← tap Hear model, then Record</span></div>'+
+      '<div><strong>'+w.en+'</strong></div></div></div>'+
+      '<div class="ex"><strong>Example:</strong> '+w.ex_zh+
+      ' <button type="button" class="speak ex-hear" data-file="'+w.ex_audio+'">🔊 Hear example</button><br>'+
+      '<span class="jyut">'+w.ex_py+'</span><br><em>'+w.ex_en+'</em></div>'+
+      '<div class="practice"></div>';
+    box.appendChild(d);
+  });
+  box.addEventListener("click", function(e){
+    var b=e.target.closest ? e.target.closest(".ex-hear") : null;
+    if(!b || !window.KevinMandarinAudio) return;
+    e.preventDefault();
+    KevinMandarinAudio.play(b.getAttribute("data-file"));
+  });
+}
+
+var matchScore=0, matchChecked=false;
+function buildMatch(){
+  var m=document.getElementById("vmatch");
+  var order=shuffled(WORDS.map(function(w){return w.py;}),83);
+  WORDS.forEach(function(w,i){
+    var row=document.createElement("div"); row.className="vrow"; row.id="vm"+i;
+    var sel='<select id="vsel'+i+'" aria-label="Meaning of '+w.zh+'"><option value="">- choose English -</option>';
+    order.forEach(function(py){
+      var en=WORDS.find(function(x){return x.py===py;}).en;
+      sel+='<option value="'+py+'">'+en+'</option>';
+    });
+    sel+='</select>';
+    row.innerHTML='<span class="mark" id="vmk'+i+'"></span><span class="w">'+w.zh+'</span><span class="jyut">'+w.py+'</span>'+sel;
+    m.appendChild(row);
+  });
+}
+function checkMatch(){
+  var score=0, blank=0;
+  WORDS.forEach(function(w,i){
+    var v=document.getElementById("vsel"+i).value, ok=(v===w.py);
+    if(!v) blank++;
+    if(ok) score++;
+    document.getElementById("vm"+i).className="vrow "+(ok?"right":"wrong");
+    document.getElementById("vmk"+i).textContent=ok?"✅":"❌";
+  });
+  matchScore=score; matchChecked=true;
+  var fb=document.getElementById("matchFb");
+  if(score===WORDS.length){ fb.className="fb good"; fb.textContent="🌟 "+score+" / "+WORDS.length+". Perfect matching, Kevin!"; }
+  else { fb.className="fb bad"; fb.textContent=score+" / "+WORDS.length+" correct"+(blank?" ("+blank+" blank)":"")+". Fix the ❌ ones and check again."; }
+  updateScore();
+}
+
+var MC = [
+ {q:"You're holding a scarf in a shop. How do you ask the price?",
+  o:["这个多少钱？","我没有钱。","商店在哪儿？","太贵了！"], a:0,
+  e:"这个多少钱？ (Zhège duōshao qián?) is How much is this? 这个 is this one."},
+ {q:"The clerk says 十块。 What's the price?",
+  o:["Five yuan","Ten yuan","One hundred yuan","Four yuan"], a:1,
+  e:"十 (shí) is ten and 块 (kuài) is the spoken word for yuan, so 十块 is ten yuan."},
+ {q:"The price is way too high. What do you say?",
+  o:["很便宜！","太贵了！","我要买。","不客气！"], a:1,
+  e:"太贵了！ (Tài guì le!) is That's too expensive! 太…了 means too (much)."},
+ {q:"Which sentence is correct for <strong>Tea is cheap</strong>?",
+  o:["茶是便宜。","茶很便宜。","便宜茶很。","茶便宜是。"], a:1,
+  e:"Like 很冷 yesterday, adjectives take 很, not 是: 茶很便宜 (Chá hěn piányi)."},
+ {q:"How do you order <strong>one cup of tea</strong>?",
+  o:["我要一杯茶。","我卖一杯茶。","我要茶一杯。","一茶杯我要。"], a:0,
+  e:"我要一杯茶 (Wǒ yào yì bēi chá). Number + measure word + noun. 卖 would mean you're selling it."},
+ {q:"Which pinyin is right for 便宜 (cheap)?",
+  o:["biànyí","piányi","piànyì","biānyi"], a:1,
+  e:"In 便宜 the 便 reads pián (rising), and 宜 is light: piányi."},
+ {q:"买 and 卖 look almost the same. Which one means <strong>to buy</strong>, and how is it said?",
+  o:["卖, mài (falling)","买, mǎi (dipping)","买, mài (falling)","卖, mǎi (dipping)"], a:1,
+  e:"买 mǎi is buy, with a dipping 3rd tone. 卖 mài, the one with the extra top, is sell."},
+ {q:"In 一杯茶, how is 一 pronounced?",
+  o:["yī","yí","yì","yǐ"], a:2,
+  e:"Before a 1st, 2nd or 3rd tone, 一 becomes yì. 杯 bēi is 1st tone, so it's yì bēi chá."}
+];
+var mcState=MC.map(function(){return{answered:false,firstRight:false,done:false};});
+function buildMC(){
+  var box=document.getElementById("mc");
+  MC.forEach(function(item,i){
+    var d=document.createElement("div"); d.className="box q"; d.id="mc"+i;
+    var html="<div><strong>"+(i+1)+".</strong> "+item.q+"</div>";
+    item.o.forEach(function(opt,j){ html+='<button type="button" class="opt" data-i="'+i+'" data-j="'+j+'">'+String.fromCharCode(65+j)+". "+opt+"</button>"; });
+    html+='<div class="fb" id="mcfb'+i+'"></div>';
+    d.innerHTML=html; box.appendChild(d);
+  });
+  box.addEventListener("click",function(e){
+    var b=e.target.closest?e.target.closest(".opt"):e.target; if(!b||!b.classList.contains("opt"))return;
+    var i=+b.getAttribute("data-i"), j=+b.getAttribute("data-j"), st=mcState[i], item=MC[i];
+    if(st.done)return;
+    var right=(j===item.a);
+    if(!st.answered){ st.answered=true; st.firstRight=right; }
+    var fb=document.getElementById("mcfb"+i), card=document.getElementById("mc"+i);
+    if(right){ st.done=true; b.classList.add("sel-right"); card.className="box q right"; fb.className="fb good"; fb.innerHTML="✅ "+pick(PRAISE)+' <span class="explain">'+item.e+"</span>"; }
+    else { b.classList.add("sel-wrong"); card.className="box q wrong"; fb.className="fb bad"; fb.textContent="❌ Not quite, Kevin. Look back at Part 1 and try again."; }
+    updateScore();
+  });
+}
+
+var FILL = [
+ {zh:"买", accept:["mai3"], show:"mǎi"},
+ {zh:"钱", accept:["qian2"], show:"qián"},
+ {zh:"多少钱", accept:["duo1 shao qian2","duo1 shao3 qian2"], show:"duōshao qián"},
+ {zh:"块", accept:["kuai4"], show:"kuài"},
+ {zh:"贵", accept:["gui4"], show:"guì"},
+ {zh:"便宜", accept:["pian2 yi","pian2 yi2"], show:"piányi"},
+ {zh:"商店", accept:["shang1 dian4"], show:"shāngdiàn"},
+ {zh:"要", accept:["yao4"], show:"yào"},
+ {zh:"五块", accept:["wu3 kuai4"], show:"wǔ kuài"},
+ {zh:"太贵了", accept:["tai4 gui4 le"], show:"tài guì le"}
+];
+var fillState=FILL.map(function(){return{correct:false,tries:0};});
+
+var SYL_SRC = "a ai an ang ao ba bai ban bang bao bei ben beng bi bian biao bie bin bing bo bu ca cai can cang cao ce cen ceng cha chai chan chang chao che chen cheng chi chong chou chu chua chuai chuan chuang chui chun chuo ci cong cou cu cuan cui cun cuo da dai dan dang dao de dei den deng di dia dian diao die ding diu dong dou du duan dui dun duo e ei en eng er fa fan fang fei fen feng fo fou fu ga gai gan gang gao ge gei gen geng gong gou gu gua guai guan guang gui gun guo ha hai han hang hao he hei hen heng hong hou hu hua huai huan huang hui hun huo ji jia jian jiang jiao jie jin jing jiong jiu ju juan jue jun ka kai kan kang kao ke ken keng kong kou ku kua kuai kuan kuang kui kun kuo la lai lan lang lao le lei leng li lia lian liang liao lie lin ling liu lo long lou lu lv luan lve lun luo ma mai man mang mao me mei men meng mi mian miao mie min ming miu mo mou mu na nai nan nang nao ne nei nen neng ni nian niang niao nie nin ning niu nong nou nu nv nuan nve nuo o ou pa pai pan pang pao pei pen peng pi pian piao pie pin ping po pou pu qi qia qian qiang qiao qie qin qing qiong qiu qu quan que qun ran rang rao re ren reng ri rong rou ru rua ruan rui run ruo sa sai san sang sao se sen seng sha shai shan shang shao she shei shen sheng shi shou shu shua shuai shuan shuang shui shun shuo si song sou su suan sui sun suo ta tai tan tang tao te teng ti tian tiao tie ting tong tou tu tuan tui tun tuo wa wai wan wang wei wen weng wo wu xi xia xian xiang xiao xie xin xing xiong xiu xu xuan xue xun ya yan yang yao ye yi yin ying yo yong you yu yuan yue yun za zai zan zang zao ze zei zen zeng zha zhai zhan zhang zhao zhe zhei zhen zheng zhi zhong zhou zhu zhua zhuai zhuan zhuang zhui zhun zhuo zi zong zou zu zuan zui zun zuo";
+var SYLS = SYL_SRC.split(/\s+/);
+SYLS.sort(function(a,b){ return b.length - a.length || (a < b ? -1 : 1); });
+
+function normPy(s){
+  if(s==null) return null;
+  var map = {"ā":"a1","á":"a2","ǎ":"a3","à":"a4","ē":"e1","é":"e2","ě":"e3","è":"e4","ī":"i1","í":"i2","ǐ":"i3","ì":"i4","ō":"o1","ó":"o2","ǒ":"o3","ò":"o4","ū":"u1","ú":"u2","ǔ":"u3","ù":"u4","ǖ":"v1","ǘ":"v2","ǚ":"v3","ǜ":"v4","ü":"v"};
+  var raw = String(s).trim().toLowerCase();
+  if(raw.normalize) raw = raw.normalize("NFC");
+  raw = raw.replace(/u:/g,"ü");
+  var tmp = "";
+  for(var i=0;i<raw.length;i++){
+    tmp += (map[raw.charAt(i)]!==undefined) ? map[raw.charAt(i)] : raw.charAt(i);
+  }
+  raw = tmp.replace(/[^a-z0-5]+/g,"");
+  if(!raw) return null;
+  function matchAt(pos){
+    var res=[];
+    for(var s=0;s<SYLS.length;s++){
+      var syl = SYLS[s], j = pos, k = 0, tone = "", ok = true;
+      while(k < syl.length){
+        if(j >= raw.length){ ok = false; break; }
+        var ch = raw.charAt(j);
+        if(ch >= "0" && ch <= "5"){
+          if(tone){ ok = false; break; }
+          tone = ch; j++; continue;
+        }
+        if(ch !== syl.charAt(k)){ ok = false; break; }
+        j++; k++;
+      }
+      if(!ok || k !== syl.length) continue;
+      if(j < raw.length){
+        var nxt = raw.charAt(j);
+        if(nxt >= "0" && nxt <= "5"){
+          if(tone) continue;
+          tone = nxt; j++;
+        }
+      }
+      res.push({end:j, syl:syl, tone:tone});
+    }
+    return res;
+  }
+  function parse(pos){
+    if(pos >= raw.length) return [];
+    var c = matchAt(pos);
+    for(var i=0;i<c.length;i++){
+      var rest = parse(c[i].end);
+      if(rest){
+        var t = c[i].tone; if(t === "5" || t === "0") t = "";
+        return [c[i].syl + t].concat(rest);
+      }
+    }
+    return null;
+  }
+  var out = parse(0);
+  if(!out) return null;
+  return out.join(" ");
+}
+
+function buildFill(){
+  var box=document.getElementById("fill");
+  FILL.forEach(function(it,i){
+    var d=document.createElement("div"); d.className="box q"; d.id="f"+i;
+    d.innerHTML='<div><strong>'+(i+1)+'.</strong> Type pinyin for <span class="char" style="font-size:1.4em">'+it.zh+'</span></div>'+
+      '<div class="row"><input type="text" id="fi'+i+'" autocomplete="off" spellcheck="false" aria-label="Pinyin for '+it.zh+'">'+
+      '<button type="button" class="check" data-i="'+i+'">Check</button></div><div class="fb" id="ffb'+i+'"></div>';
+    box.appendChild(d);
+  });
+  box.addEventListener("click",function(e){
+    var b=e.target; if(b.tagName!=="BUTTON"||!b.classList.contains("check"))return;
+    fillCheck(+b.getAttribute("data-i"));
+  });
+  box.addEventListener("keydown",function(e){if(e.key==="Enter"&&e.target.tagName==="INPUT")fillCheck(+e.target.id.slice(2));});
+}
+function fillCheck(i){
+  var val=document.getElementById("fi"+i).value, fb=document.getElementById("ffb"+i), st=fillState[i];
+  if(!val.trim()){fb.className="fb bad";fb.textContent="Type the pinyin first.";return;}
+  st.tries++;
+  var got = normPy(val);
+  var ok = !!got && FILL[i].accept.indexOf(got) !== -1;
+  if(ok){
+    st.correct=true; document.getElementById("f"+i).className="box q right";
+    fb.className="fb good"; fb.textContent="✅ "+pick(PRAISE)+(st.tries===1?" (first try!)":"")+" "+FILL[i].show;
+  } else {
+    st.correct=false; document.getElementById("f"+i).className="box q wrong";
+    fb.className="fb bad";
+    fb.textContent = got ? "❌ Not quite. Check every tone. A form that works: "+FILL[i].show+" or tone numbers."
+                         : "❌ Could not read that as pinyin. Try tone marks (shāngdiàn) or numbers (shang1 dian4).";
+  }
+  updateScore();
+}
+
+function scores(){
+  var mc=0; mcState.forEach(function(s){if(s.firstRight)mc++;});
+  var f=0; fillState.forEach(function(s){if(s.correct)f++;});
+  return {match:matchScore, mc:mc, fill:f};
+}
+function updateScore(){
+  var s=scores();
+  document.getElementById("scoreText").textContent="Match: "+(matchChecked?s.match:"-")+"/"+WORDS.length+" · Situations: "+s.mc+"/"+MC.length+" · Pinyin: "+s.fill+"/"+FILL.length;
+}
+function finish(){
+  if(!matchChecked) checkMatch();
+  var s=scores(), total=WORDS.length+MC.length+FILL.length, got=s.match+s.mc+s.fill, pct=Math.round(100*got/total);
+  var msg = pct===100 ? "🏆 完美！ Perfect score, Kevin. You're ready to shop in Mandarin." :
+            pct>=80 ? "🌟 Strong work. Next coffee run, ask yourself: 多少钱？" :
+            pct>=60 ? "💪 Solid effort. Review the cards and retry the ❌ ones." :
+                      "🌱 Shopping words take a few passes. Play all words, say each one three times, then retry.";
+  var f=document.getElementById("final"); f.style.display="block";
+  f.innerHTML="<h2 style='border:none;margin-top:0'>Final Score: "+got+" / "+total+" ("+pct+"%)</h2>"+
+    "<p>Matching: "+s.match+"/"+WORDS.length+" · Situations (first try): "+s.mc+"/"+MC.length+" · Pinyin typing: "+s.fill+"/"+FILL.length+"</p><p>"+msg+"</p>"+
+    "<p style='font-size:.85em;color:#ef6c00'>Finished on "+new Date().toLocaleString("en-CA",{timeZone:"America/Vancouver"})+" PT</p>";
+  f.scrollIntoView({behavior:"smooth"});
+}
+buildCards(); buildMatch(); buildMC(); buildFill(); updateScore();
+if(window.KevinMandarinAudio) KevinMandarinAudio.wireLesson({playAllBtn:"#playAll",stopBtn:"#stopAudio",allFile:"day7-ALL-words.mp3"});
+document.getElementById("checkMatch").addEventListener("click",checkMatch);
+document.getElementById("finishBtn").addEventListener("click",finish);
+</script>
+</body>
+</html>

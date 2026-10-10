@@ -74,3 +74,14 @@
 下雪	xià xuě	to snow
 风	fēng	wind
 雨伞	yǔsǎn	umbrella
+
+# Day 7 (2026-10-10): shopping
+# Tone notes: 买 mǎi (buy, 3rd) vs 卖 mài (sell, 4th; not a headword). 便宜 piányi: 便 reads pián here, 宜 neutral. 多少钱 duōshao qián: 少 usually neutral in speech (duōshǎo also heard). 块 kuài = spoken yuan (written 元 yuán). 一杯 yì bēi (一 before 1st tone). Example-only extras (not headwords): 这个 zhège, 太…了 tài…le, 在 zài, 哪儿 nǎr, 杯 bēi, 星期六 xīngqīliù.
+买	mǎi	to buy
+钱	qián	money
+多少钱	duōshao qián	how much (money)
+块	kuài	yuan (spoken)
+贵	guì	expensive
+便宜	piányi	cheap
+商店	shāngdiàn	shop, store
+要	yào	to want, would like
