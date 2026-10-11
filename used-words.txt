@@ -85,3 +85,14 @@
 便宜	piányi	cheap
 商店	shāngdiàn	shop, store
 要	yào	to want, would like
+
+# Day 8 (2026-10-11): travel and getting around
+# Tone notes: 去 qù and 坐 zuò are 4th. 飞机 fēijī and 出租车 chūzūchē are all 1st. 很远 hěn yuǎn: first of two 3rd tones rises. Order: subject + time + 坐 vehicle + 去 place. Example-only extras (not headwords): 站 zhàn, 吗 ma, 大 dà, 近 jìn, 星期天 xīngqītiān.
+去	qù	to go
+坐	zuò	to ride, take (a vehicle); to sit
+飞机	fēijī	airplane
+火车	huǒchē	train
+出租车	chūzūchē	taxi
+地铁	dìtiě	subway, metro
+机场	jīchǎng	airport
+远	yuǎn	far
