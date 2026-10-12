@@ -96,3 +96,14 @@
 地铁	dìtiě	subway, metro
 机场	jīchǎng	airport
 远	yuǎn	far
+
+# Day 9 (2026-10-12): the body and health
+# Tone notes: 头 tóu and 疼 téng are 2nd. 背 bèi 4th, 腰 yāo 1st (lower back/waist; usual word for lumbar pain). 有点儿 yǒudiǎnr: first 3rd tone rises. Pattern: body part + 疼. Audio made with Google TTS zh-CN because Edge TTS returned 403. Example-only extras (not headwords): 的 de, 有点儿 yǒudiǎnr, 是 shì, 哪儿 nǎr, 健康 jiànkāng.
+头	tóu	head
+手	shǒu	hand
+脚	jiǎo	foot
+背	bèi	back (of the body)
+腰	yāo	lower back, waist
+疼	téng	to hurt, sore
+医生	yīshēng	doctor
+身体	shēntǐ	body; health
