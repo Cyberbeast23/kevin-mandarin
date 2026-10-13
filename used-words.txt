@@ -107,3 +107,14 @@
 疼	téng	to hurt, sore
 医生	yīshēng	doctor
 身体	shēntǐ	body; health
+
+# Day 10 (2026-10-13): home and daily routine
+# Tone notes: 厨房 chúfáng two 2nd tones; 睡觉 shuìjiào two 4th; 洗澡 xǐzǎo first 3rd rises. Patterns: 在 + place; time before verb. Audio made with Google TTS zh-CN because Edge TTS returned 403. Example-only extras (not headwords): 在 zài, 欢迎 huānyíng, 来 lái, 小 xiǎo, 狗 gǒu, 床上 chuáng shang.
+家	jiā	home; family
+住	zhù	to live (somewhere)
+房间	fángjiān	room
+厨房	chúfáng	kitchen
+床	chuáng	bed
+起床	qǐchuáng	to get up
+睡觉	shuìjiào	to sleep, go to bed
+洗澡	xǐzǎo	to shower, bathe
