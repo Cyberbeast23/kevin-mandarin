@@ -118,3 +118,14 @@
 起床	qǐchuáng	to get up
 睡觉	shuìjiào	to sleep, go to bed
 洗澡	xǐzǎo	to shower, bathe
+
+# Day 11 (2026-10-14): colors and describing things
+# Tone notes: 色 sè always 4th. 绿 lǜ keeps the ü dots (lù = road). 漂亮 piàoliang: 亮 is neutral. Pattern: noun + 是 + color + 的. Asking favourite: 你喜欢什么颜色？ Audio made with Google TTS zh-CN because Edge TTS returned 403. Example-only extras (not headwords): 喜欢 xǐhuan, 车 chē, 的 de, 这个 zhège, 很 hěn.
+颜色	yánsè	color
+红色	hóngsè	red
+蓝色	lánsè	blue
+绿色	lǜsè	green
+黄色	huángsè	yellow
+白色	báisè	white
+黑色	hēisè	black
+漂亮	piàoliang	pretty, beautiful
