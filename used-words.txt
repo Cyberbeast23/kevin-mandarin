@@ -129,3 +129,14 @@
 白色	báisè	white
 黑色	hēisè	black
 漂亮	piàoliang	pretty, beautiful
+
+# Day 12 (2026-10-15): animals
+# Tone notes: 动物 dòngwù two 4th tones; 狗 gǒu and 马 mǎ both 3rd; 猫 māo 1st; 鸟 niǎo 3rd; 鱼 yú 2nd. 喜欢 xǐhuān in citation (often xǐhuan in speech). 可爱 kě'ài needs the apostrophe. Measure 只 for most animals; 匹 for horses. Audio made with Google TTS zh-CN because Edge TTS returned 403. Example-only extras (not headwords): 只 zhī, 匹 pǐ, 树 shù, 小 xiǎo, 大 dà, 有 yǒu.
+动物	dòngwù	animal
+狗	gǒu	dog
+猫	māo	cat
+鸟	niǎo	bird
+鱼	yú	fish
+马	mǎ	horse
+喜欢	xǐhuān	to like
+可爱	kě'ài	cute, adorable
