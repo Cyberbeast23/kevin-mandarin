@@ -140,3 +140,14 @@
 马	mǎ	horse
 喜欢	xǐhuān	to like
 可爱	kě'ài	cute, adorable
+
+# Day 13 (2026-10-16): clothes
+# Tone notes: 衣服 yīfu — 服 usually neutral. 裤子/鞋子/帽子 all take a light 子. 衬衫 chènshān falls then high. 外套 wàitào two 4th tones. 穿 chuān and 新 xīn both 1st. Measure: 件 for clothes/shirts/jackets, 条 for pants, 双 for shoes, 顶 for hats. 戴 dài for hats (example-only). Audio made with Google TTS zh-CN because Edge TTS returned 403. Example-only extras (not headwords): 件 jiàn, 条 tiáo, 戴 dài, 外面 wàimian, 了 le, 双 shuāng, 顶 dǐng.
+衣服	yīfu	clothes
+裤子	kùzi	pants, trousers
+鞋子	xiézi	shoes
+帽子	màozi	hat
+衬衫	chènshān	shirt
+外套	wàitào	jacket, coat
+穿	chuān	to wear, put on
+新	xīn	new
