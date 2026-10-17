@@ -151,3 +151,14 @@
 外套	wàitào	jacket, coat
 穿	chuān	to wear, put on
 新	xīn	new
+
+# Day 14 (2026-10-17): hobbies and free time
+# Tone notes: 爱好 àihào — 好 is 4th (hào) here, not hǎo. 音乐 yīnyuè — 乐 is yuè in music, lè in 快乐. 运动 yùndòng two 4th tones. 跑步 pǎobù half-3rd then 4th. 游泳 yóuyǒng 2nd then 3rd. 周末 zhōumò 1st then 4th. 看书 kàn shū and 唱歌 chànggē fall then high. Audio made with Google TTS zh-CN because Edge TTS returned 403. Example-only extras (not headwords): 做 zuò, 每天 měitiān, 夏天 xiàtiān, 听 tīng, 好听 hǎotīng, 在 zài, 快乐 kuàilè.
+爱好	àihào	hobby
+周末	zhōumò	weekend
+运动	yùndòng	exercise, sports
+跑步	pǎobù	to run, jog
+游泳	yóuyǒng	to swim
+看书	kàn shū	to read (books)
+音乐	yīnyuè	music
+唱歌	chànggē	to sing

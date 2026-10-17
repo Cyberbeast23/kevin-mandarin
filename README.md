@@ -16,6 +16,9 @@ Daily Mandarin practice (Simplified Chinese, Hanyu Pinyin, English). Each lesson
 - Day 9 (2026-10-12): https://cyberbeast23.github.io/kevin-mandarin/lessons/2026-10-12/mandarin.html
 - Day 10 (2026-10-13): https://cyberbeast23.github.io/kevin-mandarin/lessons/2026-10-13/mandarin.html
 - Day 11 (2026-10-14): https://cyberbeast23.github.io/kevin-mandarin/lessons/2026-10-14/mandarin.html
+- Day 12 (2026-10-15): https://cyberbeast23.github.io/kevin-mandarin/lessons/2026-10-15/mandarin.html
+- Day 13 (2026-10-16): https://cyberbeast23.github.io/kevin-mandarin/lessons/2026-10-16/mandarin.html
+- Day 14 (2026-10-17): https://cyberbeast23.github.io/kevin-mandarin/lessons/2026-10-17/mandarin.html
 
 ## Adding a new day
 
