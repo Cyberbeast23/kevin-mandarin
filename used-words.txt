@@ -162,3 +162,14 @@
 看书	kàn shū	to read (books)
 音乐	yīnyuè	music
 唱歌	chànggē	to sing
+
+# Day 15 (2026-10-18): work and jobs
+# Tone notes: 上班 shàngbān / 下班 xiàbān pair (上 up/on = start, 下 down/off = finish), both fall then high. 学生 xuésheng — 生 neutral in speech (contrast 医生 yīshēng). 工作 gōngzuò, 公司 gōngsī both start 1st. 老师 lǎoshī 3rd then 1st. 同事 tóngshì 2nd then 4th. 医院 yīyuàn 1st then 4th. Pattern: person + 在 + place + 工作. Audio made with Google TTS zh-CN because Edge TTS returned 403. Example-only extras (not headwords): 做 zuò, 都 dōu, 在 zài, 是 shì, 大 dà, 的 de, 加油 jiāyóu.
+工作	gōngzuò	work; to work
+上班	shàngbān	to go to work, start work
+下班	xiàbān	to get off work
+公司	gōngsī	company
+同事	tóngshì	coworker, colleague
+医院	yīyuàn	hospital
+老师	lǎoshī	teacher
+学生	xuésheng	student
