@@ -173,3 +173,14 @@
 医院	yīyuàn	hospital
 老师	lǎoshī	teacher
 学生	xuésheng	student
+
+# Day 16 (2026-10-19): places and directions
+# Tone notes: 哪里 nǎlǐ — 3rd+3rd sandhi so first rises (sounds nálǐ); 里 often light. 这里 zhèlǐ. 左边 zuǒbian / 右边 yòubian — 边 neutral. 一直走 yìzhí zǒu — 一 becomes 4th before 2nd-tone 直. 银行 yínháng — 行 is háng not xíng. 附近 fùjìn two 4th. 超市 chāoshì 1st then 4th. Pattern: thing + 在 + 哪里？ Audio made with Google TTS zh-CN because Edge TTS returned 403. Example-only extras (not headwords): 洗手间 xǐshǒujiān, 在 zài, 有 yǒu, 吗 ma, 就 jiù, 到 dào, 了 le, 走 zǒu.
+哪里	nǎlǐ	where
+这里	zhèlǐ	here
+左边	zuǒbian	left side, on the left
+右边	yòubian	right side, on the right
+一直走	yìzhí zǒu	go straight ahead
+附近	fùjìn	nearby
+银行	yínháng	bank
+超市	chāoshì	supermarket
