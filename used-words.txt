@@ -184,3 +184,14 @@
 附近	fùjìn	nearby
 银行	yínháng	bank
 超市	chāoshì	supermarket
+
+# Day 17 (2026-10-20): feelings and how you are
+# Tone notes: feelings take 很 not 是 (我很累). 了 marks change of state (我饿了, 生气了). 饿 è single falling vowel. 舒服 shūfu — 服 neutral; 不舒服 bù shūfu (不 stays 4th before 1st). 怎么样 zěnmeyàng — 么 neutral. 生气 shēngqì — 气 full 4th here. 担心 dānxīn two 1st. 难过 nánguò 2nd then 4th. 高兴 gāoxìng 1st then 4th. Audio made with Google TTS zh-CN because Edge TTS returned 403. Example-only extras (not headwords): 认识 rènshi, 他 tā, 别 bié, 没问题 méi wèntí, 了 le, 吧 ba, 有点儿 yǒudiǎnr, 不 bù.
+高兴	gāoxìng	happy, glad
+难过	nánguò	sad, upset
+累	lèi	tired
+生气	shēngqì	angry; to get angry
+担心	dānxīn	to worry
+饿	è	hungry
+舒服	shūfu	comfortable; feeling well
+怎么样	zěnmeyàng	how is it, how are things
