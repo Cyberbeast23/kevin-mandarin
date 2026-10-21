@@ -195,3 +195,14 @@
 饿	è	hungry
 舒服	shūfu	comfortable; feeling well
 怎么样	zěnmeyàng	how is it, how are things
+
+# Day 18 (2026-10-21): making plans with friends
+# Tone notes: 一 sandhi — 一起 yìqǐ (4th before 3rd), 一会儿 yíhuìr and 一下 yíxià (2nd before 4th). 可以 kěyǐ 3rd+3rd so first rises. 朋友 péngyou — 友 neutral. 一会儿 erhua huìr (pinyin parser can't handle erhua, so it's kept out of the typed pinyin quiz). 见面 jiànmiàn and 电话 diànhuà both 4th+4th. Audio made with Google TTS zh-CN because Edge TTS returned 403. Example-only extras (not headwords): 的 de, 好 hǎo, 给 gěi, 打电话 dǎ diànhuà, 一下 yíxià, 见 jiàn, 吧 ba, 吗 ma.
+朋友	péngyou	friend
+一起	yìqǐ	together
+有空	yǒu kòng	to be free, have time
+见面	jiànmiàn	to meet up
+电话	diànhuà	phone, phone call
+等	děng	to wait
+可以	kěyǐ	can, may; OK
+一会儿	yíhuìr	a little while
