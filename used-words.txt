@@ -206,3 +206,14 @@
 等	děng	to wait
 可以	kěyǐ	can, may; OK
 一会儿	yíhuìr	a little while
+
+# Day 19 (2026-10-22): ordering at a restaurant
+# Tone notes: 一 sandhi with measure words — 一碗 yì wǎn, 一杯 yì bēi. Half-3rd in 买单 mǎidān and 点菜 diǎn cài. 筷子 kuàizi — 子 neutral. 服务员 fúwùyuán rise-fall-rise. 辣 là; 不辣 bú là. Audio made with Google TTS zh-CN because Edge TTS returned 403. Example-only extras (not headwords): 家 jiā (measure), 杯 bēi, 会 huì, 用 yòng, 菜 cài, 太…了 tài…le, 这个 zhège, 给 gěi, 吧 ba.
+饭馆	fànguǎn	restaurant
+菜单	càidān	menu
+服务员	fúwùyuán	server, waiter
+点菜	diǎn cài	to order food
+筷子	kuàizi	chopsticks
+碗	wǎn	bowl
+辣	là	spicy, hot
+买单	mǎidān	to pay the bill; the bill, please
