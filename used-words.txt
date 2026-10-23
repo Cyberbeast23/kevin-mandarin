@@ -217,3 +217,14 @@
 碗	wǎn	bowl
 辣	là	spicy, hot
 买单	mǎidān	to pay the bill; the bill, please
+
+# Day 20 (2026-10-23): phones and computers
+# Tone notes: half-3rd in 手机 shǒujī and 短信 duǎnxìn. 电 = electricity in 电脑, 充电, 没电. 上网 shàngwǎng and 密码 mìmǎ fall then dip. Audio made with Google TTS zh-CN because Edge TTS returned 403. Example-only extras (not headwords): 没电 méi diàn, 在 zài, 用 yòng, 收到 shōudào, 张 zhāng, 吗 ma, 的 de, WiFi.
+手机	shǒujī	mobile phone
+电脑	diànnǎo	computer
+上网	shàngwǎng	to go online, use the internet
+发	fā	to send (a message or photo)
+短信	duǎnxìn	text message
+照片	zhàopiàn	photo
+密码	mìmǎ	password
+充电	chōngdiàn	to charge (a battery)
