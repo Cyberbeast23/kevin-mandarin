@@ -228,3 +228,14 @@
 照片	zhàopiàn	photo
 密码	mìmǎ	password
 充电	chōngdiàn	to charge (a battery)
+
+# Day 21 (2026-10-24): learning Chinese
+# Tone notes: 说 shuō and 听 tīng high-flat, 写 xiě dips. 听不懂 tīng bu dǒng (不 neutral). 一遍 yí biàn, 一个 yí ge sandhi. 中文 Zhōngwén / 汉字 Hànzì capitalized. Audio made with Google TTS zh-CN because Edge TTS returned 403. Example-only extras (not headwords): 每天 měitiān, 再 zài, 一遍 yí biàn, 字 zì, 怎么 zěnme, 难 nán, 可是 kěshì, 有意思 yǒu yìsi, 慢一点 màn yìdiǎn, 问 wèn.
+学习	xuéxí	to study, learn
+中文	Zhōngwén	Chinese (language)
+说	shuō	to speak, say
+听	tīng	to listen
+写	xiě	to write
+汉字	Hànzì	Chinese characters
+懂	dǒng	to understand
+问题	wèntí	question; problem
