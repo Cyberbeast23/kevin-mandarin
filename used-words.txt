@@ -239,3 +239,14 @@
 汉字	Hànzì	Chinese characters
 懂	dǒng	to understand
 问题	wèntí	question; problem
+
+# Day 22 (2026-10-25): autumn in the park
+# Tone notes: 秋天 qiūtiān, 花 huā, 山 shān all 1st tone. 散步 sànbù two 4th tones. 叶子 yèzi neutral 子. 一起 yìqǐ sandhi. Audio made with Google TTS zh-CN because Edge TTS returned 403. Example-only extras (not headwords): 吧 ba, 里 lǐ, 有 yǒu, 很多 hěn duō, 和 hé, 这些 zhèxiē, 爬山 pá shān, 这里的 zhèlǐ de.
+秋天	qiūtiān	autumn, fall
+公园	gōngyuán	park
+散步	sànbù	to go for a walk
+树	shù	tree
+叶子	yèzi	leaf
+花	huā	flower
+山	shān	mountain
+空气	kōngqì	air
