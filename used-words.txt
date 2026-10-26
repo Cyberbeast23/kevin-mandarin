@@ -250,3 +250,14 @@
 花	huā	flower
 山	shān	mountain
 空气	kōngqì	air
+
+# Day 23 (2026-10-26): Halloween is coming
+# Tone notes: 万圣节 Wànshèngjié capitalized (4-4-2). 害怕 hàipà, 面具 miànjù two 4th tones. 鬼 guǐ full 3rd alone. 打扮 dǎban neutral 扮. 一个 yí ge sandhi. Audio made with Google TTS zh-CN because Edge TTS returned 403. Example-only extras (not headwords): 快…了 kuài … le, 最 zuì, 什么 shénme, 孩子们 háizimen, 相信 xiāngxìn, 别 bié, 成 chéng, 可怕 kěpà, 南瓜灯 nánguā dēng, 太…了 tài … le.
+万圣节	Wànshèngjié	Halloween
+节日	jiérì	holiday, festival
+南瓜	nánguā	pumpkin
+糖果	tángguǒ	candy
+鬼	guǐ	ghost
+害怕	hàipà	to be scared
+打扮	dǎban	to dress up
+面具	miànjù	mask
