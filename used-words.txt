@@ -261,3 +261,14 @@
 害怕	hàipà	to be scared
 打扮	dǎban	to dress up
 面具	miànjù	mask
+
+# Day 24 (2026-10-27): cooking at home
+# Tone notes: 冰箱 bīngxiāng 1-1. 做饭 zuòfàn 4-4. 鸡蛋 jīdàn, 蔬菜 shūcài 1-4. 肉 ròu Mandarin r. 一点儿 yìdiǎnr sandhi. Audio made with Google TTS zh-CN (Edge TTS 403). Fill quiz avoids 蛋糕 dàngāo because normPy splits it as dang+ao. Example-only extras (not headwords): 来 lái, 里 lǐ, 两 liǎng, 想 xiǎng, 还是 háishi, 多 duō, 汤 tāng, 放 fàng, 一点儿 yìdiǎnr, 小心 xiǎoxīn, 蛋糕 dàngāo.
+做饭	zuòfàn	to cook (a meal)
+冰箱	bīngxiāng	fridge
+鸡蛋	jīdàn	egg
+肉	ròu	meat
+蔬菜	shūcài	vegetables
+盐	yán	salt
+锅	guō	pot, wok
+甜	tián	sweet
