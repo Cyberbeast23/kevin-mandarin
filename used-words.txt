@@ -272,3 +272,14 @@
 盐	yán	salt
 锅	guō	pot, wok
 甜	tián	sweet
+
+# Day 25 (2026-10-28): under the weather (colds and the pharmacy)
+# Tone notes: 发烧 fāshāo 1-1. 咳嗽 késou and 休息 xiūxi neutral second syllable. 感冒 gǎnmào 3-4. 药 yào homophone of 要. 一天 yì tiān sandhi. 多喝水 is a new phrase built from earlier 喝/水. Audio made with Google TTS zh-CN (Edge TTS 403). Example-only extras (not headwords): 了 le, 吗 ma, 次 cì, 两次 liǎng cì, 好好 hǎohǎo, 在家 zài jiā, 早日康复 zǎorì kāngfù.
+生病	shēngbìng	to get sick, be ill
+感冒	gǎnmào	a cold; to catch a cold
+发烧	fāshāo	to have a fever
+咳嗽	késou	to cough
+药	yào	medicine
+药店	yàodiàn	pharmacy
+休息	xiūxi	to rest
+多喝水	duō hē shuǐ	drink plenty of water
