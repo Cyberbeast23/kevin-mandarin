@@ -294,3 +294,14 @@
 电梯	diàntī	elevator
 早饭	zǎofàn	breakfast
 退房	tuìfáng	to check out (of a hotel)
+
+# Day 27 (2026-10-30): at the post office
+# Tone notes: 邮局 yóujú 2-2, 邮票 yóupiào 2-4, 包裹 bāoguǒ 1-3, 快递 kuàidì 4-4, 收到 shōudào 1-4. 一封 yì fēng, 一张 yì zhāng, 一下 yíxià sandhi. Audio made with Google TTS zh-CN. Example-only extras (not headwords): 旁边 pángbiān, 想 xiǎng, 东西 dōngxi, 多重 duō zhòng, 封 fēng, 张 zhāng, 到 dào, 吗 ma.
+邮局	yóujú	post office
+寄	jì	to mail, send
+包裹	bāoguǒ	parcel, package
+信	xìn	letter
+地址	dìzhǐ	address
+邮票	yóupiào	stamp
+快递	kuàidì	courier delivery
+收到	shōudào	to receive
