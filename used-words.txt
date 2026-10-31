@@ -305,3 +305,14 @@
 邮票	yóupiào	stamp
 快递	kuàidì	courier delivery
 收到	shōudào	to receive
+
+# Day 28 (2026-10-31): at the barbershop
+# Tone notes: 理发店 lǐfàdiàn 3-4-4, 头发 tóufa neutral second, 镜子 jìngzi neutral second, 剪短 jiǎn duǎn 3-3 sandhi (first rises). 一点 yìdiǎn, 一下 yíxià, 不要 bú yào sandhi. Audio made with Google TTS zh-CN. Example-only extras (not headwords): 太 tài, 一点 yìdiǎn, 后面 hòumian, 前面 qiánmian, 不要 bú yào, 先 xiān, 了 le.
+理发店	lǐfàdiàn	barbershop, hair salon
+理发	lǐfà	to get a haircut
+头发	tóufa	hair
+剪	jiǎn	to cut
+短	duǎn	short
+长	cháng	long
+镜子	jìngzi	mirror
+洗头	xǐtóu	to wash hair
