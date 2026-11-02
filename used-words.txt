@@ -327,3 +327,14 @@
 票	piào	ticket
 换车	huànchē	to transfer, change buses
 刷卡	shuākǎ	to tap or swipe a card
+
+# Day 30 (2026-11-02): money and the bank
+# Tone notes: 取款机 qǔkuǎnjī 3-3-1 sandhi (first rises), 现金 xiànjīn 4-1, 人民币 rénmínbì 2-2-4. 一百 yìbǎi, 不见 bú jiàn sandhi. Audio made with Google TTS zh-CN. Example-only extras (not headwords): 用 yòng, 每个月 měi ge yuè, 加元 jiāyuán, 一百 yìbǎi, 不见了 bú jiàn le.
+现金	xiànjīn	cash
+银行卡	yínhángkǎ	bank card
+取钱	qǔqián	to withdraw money
+存钱	cúnqián	to deposit or save money
+换钱	huànqián	to exchange money
+人民币	rénmínbì	Chinese yuan (RMB)
+钱包	qiánbāo	wallet
+取款机	qǔkuǎnjī	ATM, cash machine
