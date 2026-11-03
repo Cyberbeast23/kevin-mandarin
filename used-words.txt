@@ -338,3 +338,14 @@
 人民币	rénmínbì	Chinese yuan (RMB)
 钱包	qiánbāo	wallet
 取款机	qǔkuǎnjī	ATM, cash machine
+
+# Day 31 (2026-11-03): at the airport
+# Tone notes: 晚点 wǎndiǎn 3-3 sandhi (first rises), 行李 xíngli neutral second, 登机牌 dēngjīpái 1-1-2, 起飞 qǐfēi 3-1. 一个 yí ge, 一下 yíxià sandhi. Audio made with Google TTS zh-CN. Example-only extras (not headwords): 哪个 nǎge, 件 jiàn, 箱子 xiāngzi, 号 hào, 小时 xiǎoshí, 我们 wǒmen, 您 nín.
+航班	hángbān	flight
+行李	xíngli	luggage, baggage
+托运	tuōyùn	to check (bags)
+安检	ānjiǎn	security check
+登机牌	dēngjīpái	boarding pass
+登机口	dēngjīkǒu	boarding gate
+起飞	qǐfēi	to take off
+晚点	wǎndiǎn	delayed, late
