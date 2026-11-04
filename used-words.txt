@@ -349,3 +349,14 @@
 登机口	dēngjīkǒu	boarding gate
 起飞	qǐfēi	to take off
 晚点	wǎndiǎn	delayed, late
+
+# Day 32 (2026-11-04): housework and chores
+# Tone notes: 打扫 dǎsǎo 3-3 sandhi (first rises), 洗衣服 xǐ yīfu neutral 服, 垃圾 lājī 1-1, 干净 gānjìng 1-4. Audio made with Google TTS zh-CN. Example-only extras (not headwords): 把 bǎ, 先 xiān, 洗碗 xǐ wǎn, 太…了 tài…le.
+打扫	dǎsǎo	to clean, tidy up
+洗衣服	xǐ yīfu	to do the laundry
+垃圾	lājī	garbage, trash
+扔	rēng	to throw (away)
+干净	gānjìng	clean
+脏	zāng	dirty
+拖地	tuōdì	to mop the floor
+帮忙	bāngmáng	to help, lend a hand
