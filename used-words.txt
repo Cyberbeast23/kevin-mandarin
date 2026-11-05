@@ -360,3 +360,14 @@
 脏	zāng	dirty
 拖地	tuōdì	to mop the floor
 帮忙	bāngmáng	to help, lend a hand
+
+# Day 33 (2026-11-05): at the cinema / watching a movie
+# Tone notes: 好看 hǎokàn 3-4, 座位 zuòwèi 4-4, 开始 kāishǐ 1-3, 结束 jiéshù 2-4, 演员 yǎnyuán 3-2, 爆米花 bàomǐhuā 4-3-1, 电影 diànyǐng 4-3. Sandhi 一点 yìdiǎn. Measure 部 bù for films. Audio made with Google TTS zh-CN (Edge TTS 403). Example-only extras (not headwords): 喜欢 xǐhuan, 看 kàn, 附近 fùjìn, 七点 qī diǎn, 什么时候 shénme shíhou, 有名 yǒumíng, 一点 yìdiǎn, 这部 zhè bù.
+电影	diànyǐng	movie, film
+电影院	diànyǐngyuàn	cinema, movie theater
+好看	hǎokàn	good/interesting to watch
+座位	zuòwèi	seat
+开始	kāishǐ	to start, begin
+结束	jiéshù	to end, finish
+演员	yǎnyuán	actor/actress
+爆米花	bàomǐhuā	popcorn
