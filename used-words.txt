@@ -371,3 +371,14 @@
 结束	jiéshù	to end, finish
 演员	yǎnyuán	actor/actress
 爆米花	bàomǐhuā	popcorn
+
+# Day 34 (2026-11-06): at the gym / working out
+# Tone notes: 健身房 jiànshēnfáng 4-1-2, 锻炼 duànliàn 4-4, 跑步机 pǎobùjī 3-4-1, 举重 jǔzhòng 3-4, 肌肉 jīròu 1-4, 出汗 chūhàn 1-4, 拉伸 lāshēn 1-1, 健康 jiànkāng 4-1. 游泳/跑步/休息 already headwords earlier — used 举重 and 拉伸 instead. Audio made with Google TTS zh-CN (Edge TTS 403). Example-only extras (not headwords): 每天 měitiān, 去 qù, 喜欢 xǐhuan, 身体 shēntǐ, 跑步 pǎobù, 结实 jiēshi, 以后 yǐhòu, 先 xiān, 对 duì.
+健身房	jiànshēnfáng	gym
+锻炼	duànliàn	to work out, exercise
+跑步机	pǎobùjī	treadmill
+举重	jǔzhòng	weightlifting
+肌肉	jīròu	muscle
+出汗	chūhàn	to sweat
+拉伸	lāshēn	to stretch
+健康	jiànkāng	healthy, health
