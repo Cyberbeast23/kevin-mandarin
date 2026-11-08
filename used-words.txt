@@ -393,3 +393,14 @@
 阅读	yuèdú	to read
 杂志	zázhì	magazine
 书架	shūjià	bookshelf
+
+# Day 36 (2026-11-08): a birthday party
+# Tone notes: 生日 shēngrì 1-4, 快乐 kuàilè 4-4 (乐 lè, not yuè), 祝 zhù 4, 蛋糕 dàngāo 4-1, 蜡烛 làzhú 4-2, 礼物 lǐwù 3-4, 岁 suì 4, 气球 qìqiú 4-2. Signature: 祝你生日快乐！ 唱歌 already a headword earlier. Audio made with Google TTS zh-CN. Example-only extras (not headwords): 今天 jīntiān, 今年 jīnnián, 几 jǐ, 根 gēn, 给 gěi, 身体 shēntǐ, 健康 jiànkāng, 好吃 hǎochī, 红色 hóngsè, 喜欢 xǐhuan.
+生日	shēngrì	birthday
+快乐	kuàilè	happy
+祝	zhù	to wish (someone well)
+蛋糕	dàngāo	cake
+蜡烛	làzhú	candle
+礼物	lǐwù	gift, present
+岁	suì	years old
+气球	qìqiú	balloon
