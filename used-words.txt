@@ -404,3 +404,14 @@
 礼物	lǐwù	gift, present
 岁	suì	years old
 气球	qìqiú	balloon
+
+# Day 37 (2026-11-09): a snowy winter day
+# Tone notes: 冬天 dōngtiān 1-1, 雪人 xuěrén 3-2, 滑雪 huáxuě 2-3, 手套 shǒutào 3-4, 围巾 wéijīn 2-1, 暖和 nuǎnhuo 3-neutral (和 huo, not hé), 冰 bīng 1, 羽绒服 yǔróngfú 3-2-2. Signature: 外面很冷，别忘了戴手套。 Audio made with Google TTS zh-CN. Example-only extras (not headwords): 加拿大 Jiānádà, 外面 wàimiàn, 堆 duī, 周末 zhōumò, 戴 dài, 别忘了 bié wàng le, 条 tiáo, 新 xīn, 湖 hú, 厚 hòu, 穿 chuān.
+冬天	dōngtiān	winter
+雪人	xuěrén	snowman
+滑雪	huáxuě	to ski, skiing
+手套	shǒutào	gloves, mittens
+围巾	wéijīn	scarf
+暖和	nuǎnhuo	warm, cosy
+冰	bīng	ice
+羽绒服	yǔróngfú	down jacket, puffer coat
