@@ -415,3 +415,14 @@
 暖和	nuǎnhuo	warm, cosy
 冰	bīng	ice
 羽绒服	yǔróngfú	down jacket, puffer coat
+
+# Day 38 (2026-11-10): at the dentist
+# Tone notes: 牙医 yáyī 2-1, 牙齿 yáchǐ 2-3, 刷牙 shuāyá 1-2 (action) vs 牙刷 yáshuā 2-1 (thing), 牙膏 yágāo 2-1, 张嘴 zhāng zuǐ 1-3, 预约 yùyuē 4-1, 检查 jiǎnchá 3-2. Signature: 请张嘴，我看一下。 Audio made with Google TTS zh-CN. Example-only extras (not headwords): 看牙医 kàn yáyī, 两次 liǎng cì, 新 xīn, 用完了 yòng wán le, 请 qǐng, 一下 yíxià, 下星期二 xià xīngqī'èr, 给 gěi.
+牙医	yáyī	dentist
+牙齿	yáchǐ	teeth, tooth
+刷牙	shuāyá	to brush your teeth
+牙刷	yáshuā	toothbrush
+牙膏	yágāo	toothpaste
+张嘴	zhāng zuǐ	open your mouth
+预约	yùyuē	to book an appointment
+检查	jiǎnchá	check-up, to examine
