@@ -426,3 +426,14 @@
 张嘴	zhāng zuǐ	open your mouth
 预约	yùyuē	to book an appointment
 检查	jiǎnchá	check-up, to examine
+
+# Day 39 (2026-11-11): grocery shopping
+# Tone notes: 水果 shuǐguǒ 3-3 (said 2-3), 苹果 píngguǒ 2-3, 香蕉 xiāngjiāo 1-1, 牛奶 niúnǎi 2-3, 面包 miànbāo 4-1, 斤 jīn 1, 新鲜 xīnxiān 1-1, 购物车 gòuwùchē 4-4-1. Signature: 苹果多少钱一斤？ Audio made with Google TTS zh-CN. Example-only extras (not headwords): 买菜 mǎi cài, 这些 zhèxiē, 拿 ná, 一斤 yì jīn.
+水果	shuǐguǒ	fruit
+苹果	píngguǒ	apple
+香蕉	xiāngjiāo	banana
+牛奶	niúnǎi	milk
+面包	miànbāo	bread
+斤	jīn	jin (half a kilo)
+新鲜	xīnxiān	fresh
+购物车	gòuwùchē	shopping cart
