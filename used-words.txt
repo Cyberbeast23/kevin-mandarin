@@ -437,3 +437,14 @@
 斤	jīn	jin (half a kilo)
 新鲜	xīnxiān	fresh
 购物车	gòuwùchē	shopping cart
+
+# Day 40 (2026-11-12): driving the car
+# Tone notes: 开车 kāichē 1-1, 驾照 jiàzhào 4-4, 加油站 jiāyóuzhàn 1-2-4, 停车场 tíngchēchǎng 2-1-3, 红绿灯 hónglǜdēng 2-4-1, 堵车 dǔchē 3-1, 安全带 ānquándài 1-2-4, 慢 màn 4. Signature: 请系好安全带。 Audio made with Google TTS zh-CN. Example-only extras (not headwords): 往左拐 wǎng zuǒ guǎi, 后面 hòumian, 常常 chángcháng, 每天 měitiān, 前面 qiánmian, 时候 shíhou, 系好 jìhǎo, 慢一点 màn yìdiǎn.
+开车	kāichē	to drive
+驾照	jiàzhào	driver's licence
+加油站	jiāyóuzhàn	gas station
+停车场	tíngchēchǎng	parking lot
+红绿灯	hónglǜdēng	traffic light
+堵车	dǔchē	traffic jam
+安全带	ānquándài	seatbelt
+慢	màn	slow
