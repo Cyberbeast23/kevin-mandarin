@@ -448,3 +448,14 @@
 堵车	dǔchē	traffic jam
 安全带	ānquándài	seatbelt
 慢	màn	slow
+
+# Day 41 (2026-11-13): at the coffee shop
+# Tone notes: 咖啡馆 kāfēiguǎn 1-1-3, 拿铁 nátiě 2-3, 杯 bēi 1, 糖 táng 2, 奶茶 nǎichá 3-2, 苦 kǔ 3, 带走 dàizǒu 4-3, 吸管 xīguǎn 1-3. Signature: 在这儿喝还是带走？ Audio made with Google TTS zh-CN. Example-only extras (not headwords): 还是 háishi, 不要 búyào, 加 jiā, 大杯 dà bēi, 小杯 xiǎo bēi, 根 gēn, 坐一坐 zuò yi zuò, 在这儿 zài zhèr.
+咖啡馆	kāfēiguǎn	café, coffee shop
+拿铁	nátiě	latte
+杯	bēi	cup (measure word for cups)
+糖	táng	sugar
+奶茶	nǎichá	milk tea
+苦	kǔ	bitter
+带走	dàizǒu	to take away, to go
+吸管	xīguǎn	straw
