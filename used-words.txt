@@ -459,3 +459,14 @@
 苦	kǔ	bitter
 带走	dàizǒu	to take away, to go
 吸管	xīguǎn	straw
+
+# Day 42 (2026-11-14): watching a hockey game
+# Tone notes: 冰球 bīngqiú 1-2, 比赛 bǐsài 3-4, 球队 qiúduì 2-4, 球迷 qiúmí 2-2, 进球 jìnqiú 4-2, 赢 yíng 2, 输 shū 1, 加油 jiāyóu 1-2 (same 加油 as 加油站 — literally add fuel). Scores use 比: 三比二 sān bǐ èr. Signature: 加油！我们一定能赢！ Audio made with Google TTS zh-CN. Example-only extras (not headwords): 星期六 xīngqīliù, 晚上 wǎnshang, 一起 yìqǐ, 几点 jǐ diǎn, 哪个 nǎge, 大 dà, 太好了 tài hǎo le, 比 bǐ, 昨天 zuótiān, 一定 yídìng, 能 néng.
+冰球	bīngqiú	ice hockey
+比赛	bǐsài	game, match
+球队	qiúduì	team (sports)
+球迷	qiúmí	sports fan
+进球	jìnqiú	to score a goal; a goal
+赢	yíng	to win
+输	shū	to lose (a game)
+加油	jiāyóu	Go! Come on! (cheering)
