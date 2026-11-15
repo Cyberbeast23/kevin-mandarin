@@ -470,3 +470,14 @@
 赢	yíng	to win
 输	shū	to lose (a game)
 加油	jiāyóu	Go! Come on! (cheering)
+
+# Day 43 (2026-11-15): renting an apartment
+# Tone notes: 公寓 gōngyù 1-4, 房东 fángdōng 2-1, 房租 fángzū 2-1, 卧室 wòshì 4-4, 家具 jiājù 1-4, 押金 yājīn 1-1, 邻居 línjū 2-1, 搬家 bānjiā 1-1. Measure word 套 tào for apartments (一套 yí tào). Signature: 房租每个月多少钱？ Audio made with Google TTS zh-CN. Example-only extras (not headwords): 想 xiǎng, 租 zū, 套 tào, 人 rén, 每个月 měi ge yuè, 两个 liǎng ge, 房子里 fángzi li, 一个月 yí ge yuè, 安静 ānjìng, 下个月 xià ge yuè, 交 jiāo.
+公寓	gōngyù	apartment
+房东	fángdōng	landlord
+房租	fángzū	rent
+卧室	wòshì	bedroom
+家具	jiājù	furniture
+押金	yājīn	deposit
+邻居	línjū	neighbour
+搬家	bānjiā	to move (house)
