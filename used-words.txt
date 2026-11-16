@@ -481,3 +481,14 @@
 押金	yājīn	deposit
 邻居	línjū	neighbour
 搬家	bānjiā	to move (house)
+
+# Day 44 (2026-11-16): camping in the woods
+# Tone notes: 露营 lùyíng 4-2, 帐篷 zhàngpeng 4-0, 睡袋 shuìdài 4-4, 森林 sēnlín 1-2, 星星 xīngxing 1-0, 手电筒 shǒudiàntǒng 3-4-3, 钓鱼 diàoyú 4-2, 蚊子 wénzi 2-0. Verb 搭 dā for pitching a tent. Suggestion 吧. Signature: 你看，天上有很多星星！ Audio made with Google TTS zh-CN. Example-only extras (not headwords): 周末 zhōumò, 吧 ba, 湖边 húbiān, 搭 dā, 带 dài, 天上 tiān shang, 天黑 tiān hēi, 打开 dǎkāi, 早上 zǎoshang, 这里 zhèli, 太多了 tài duō le.
+露营	lùyíng	to go camping
+帐篷	zhàngpeng	tent
+睡袋	shuìdài	sleeping bag
+森林	sēnlín	forest
+星星	xīngxing	star
+手电筒	shǒudiàntǒng	flashlight
+钓鱼	diàoyú	to fish, go fishing
+蚊子	wénzi	mosquito
