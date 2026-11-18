@@ -503,3 +503,14 @@
 舞台	wǔtái	stage
 观众	guānzhòng	audience
 鼓掌	gǔzhǎng	to applaud, clap
+
+# Day 46 (2026-11-18): a day at the museum
+# Tone notes: 博物馆 bówùguǎn 2-4-3 (馆 hall, as in 饭馆/图书馆), 展览 zhǎnlǎn 3-3 (said zhán lǎn), 参观 cānguān 1-1, 导游 dǎoyóu 3-2, 历史 lìshǐ 4-3, 恐龙 kǒnglóng 3-2, 拍照 pāizhào 1-4, 纪念品 jìniànpǐn 4-4-3. Patterns 对……感兴趣; 不能 + verb (not allowed); 只 zhī measure word for animals. Signature: 这个展览很有意思。 Audio made with Google TTS zh-CN. Example-only extras (not headwords): 周末 zhōumò, 吧 ba, 有意思 yǒu yìsi, 两个小时 liǎng ge xiǎoshí, 说得很清楚 shuō de hěn qīngchu, 对 duì, 感兴趣 gǎn xìngqù, 只 zhī, 真大 zhēn dà, 对不起 duìbuqǐ, 这里 zhèli, 不能 bù néng, 给 gěi, 妈妈 māma.
+博物馆	bówùguǎn	museum
+展览	zhǎnlǎn	exhibition
+参观	cānguān	to visit, tour (a place)
+导游	dǎoyóu	tour guide
+历史	lìshǐ	history
+恐龙	kǒnglóng	dinosaur
+拍照	pāizhào	to take photos
+纪念品	jìniànpǐn	souvenir
