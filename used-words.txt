@@ -536,3 +536,14 @@
 开花	kāihuā	to bloom, flower
 西红柿	xīhóngshì	tomato
 虫子	chóngzi	bug, insect
+
+# Day 49 (2026-11-21): going to a wedding
+# Tone notes: 婚礼 hūnlǐ 1-3, 结婚 jiéhūn 2-1, 新娘 xīnniáng 1-2, 新郎 xīnláng 1-2, 戒指 jièzhi 4-neutral, 红包 hóngbāo 2-1, 干杯 gānbēi 1-1, 幸福 xìngfú 4-2. Patterns 祝 + person + wish (祝你们幸福); 为 + person + 干杯; 新 = new (新娘/新郎/新人). Signature: 祝你们幸福！ Audio made with Google TTS zh-CN. Example-only extras (not headwords): 下个星期六 xià ge xīngqīliù, 参加 cānjiā, 朋友 péngyou, 哥哥 gēge, 明年 míngnián, 真漂亮 zhēn piàoliang, 穿了 chuān le, 一件 yí jiàn, 黑色 hēisè, 西装 xīzhuāng, 给 gěi, 戴上 dài shang, 新人 xīnrén, 为 wèi, 祝 zhù, 你们 nǐmen.
+婚礼	hūnlǐ	wedding (ceremony)
+结婚	jiéhūn	to get married
+新娘	xīnniáng	bride
+新郎	xīnláng	groom
+戒指	jièzhi	ring (for a finger)
+红包	hóngbāo	red envelope (gift money)
+干杯	gānbēi	cheers! (a toast)
+幸福	xìngfú	happy, happiness
