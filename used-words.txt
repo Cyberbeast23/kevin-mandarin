@@ -558,3 +558,14 @@
 准时	zhǔnshí	on time, punctual
 出发	chūfā	to set off, depart
 到站	dàozhàn	to arrive at the station
+
+# Day 51 (2026-11-23): at the swimming pool
+# Tone notes: 游泳池 yóuyǒngchí 2-3-2, 泳衣 yǒngyī 3-1, 毛巾 máojīn 2-1, 深 shēn 1, 浅 qiǎn 3, 跳水 tiàoshuǐ 4-3, 救生员 jiùshēngyuán 4-1-2, 潜水 qiánshuǐ 2-3. Patterns 别忘了 + verb (别忘了带泳衣); 是我的 (is mine); 在 + V着 (在看着). Water radical 氵. Signature: 别忘了带泳衣！ Audio made with Google TTS zh-CN. Example-only extras (not headwords): 去 qù, 游泳 yóuyǒng, 吧 ba, 别忘了 bié wàng le, 带 dài, 这条 zhè tiáo, 是我的 shì wǒ de, 这边 zhè biān, 水 shuǐ, 很 hěn, 小孩子 xiǎo háizi, 浅水区 qiǎnshuǐqū, 玩 wán, 从 cóng, 高台 gāotái, 看着 kànzhe, 大家 dàjiā, 可以 kěyǐ, 十秒钟 shí miǎozhōng.
+游泳池	yóuyǒngchí	swimming pool
+泳衣	yǒngyī	swimsuit
+毛巾	máojīn	towel
+深	shēn	deep
+浅	qiǎn	shallow
+跳水	tiàoshuǐ	to dive (jump into the water)
+救生员	jiùshēngyuán	lifeguard
+潜水	qiánshuǐ	to go underwater, scuba dive
