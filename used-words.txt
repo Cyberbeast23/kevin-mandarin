@@ -569,3 +569,14 @@
 跳水	tiàoshuǐ	to dive (jump into the water)
 救生员	jiùshēngyuán	lifeguard
 潜水	qiánshuǐ	to go underwater, scuba dive
+
+# Day 52 (2026-11-24): making dumplings
+# Tone notes: 饺子 jiǎozi 3-neutral, 面粉 miànfěn 4-3, 馅 xiàn 4, 皮 pí 2, 擀 gǎn 3, 煮 zhǔ 3, 蒸 zhēng 1, 醋 cù 4. Patterns 包饺子 (wrap = make dumplings); 把 + obj + 放进去; 太…了; …的时候. Fire radical 灬 in 煮/蒸. Signature: 我们一起包饺子吧！ Audio made with Google TTS zh-CN. Example-only extras (not headwords): 一起 yìqǐ, 包 bāo, 吧 ba, 做 zuò, 要 yào, 用 yòng, 喜欢 xǐhuan, 猪肉 zhūròu, 白菜 báicài, 这个 zhège, 厚 hòu, 妈妈 māma, 水开了 shuǐ kāi le, 把 bǎ, 放进去 fàng jìnqu, 包子 bāozi, 十五分钟 shíwǔ fēnzhōng, 吃 chī, 的时候 de shíhou, 蘸 zhàn.
+饺子	jiǎozi	dumplings
+面粉	miànfěn	flour
+馅	xiàn	filling (stuffing)
+皮	pí	wrapper, skin
+擀	gǎn	to roll out (dough)
+煮	zhǔ	to boil, cook in water
+蒸	zhēng	to steam
+醋	cù	vinegar
