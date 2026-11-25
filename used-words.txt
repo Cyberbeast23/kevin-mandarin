@@ -580,3 +580,14 @@
 煮	zhǔ	to boil, cook in water
 蒸	zhēng	to steam
 醋	cù	vinegar
+
+# Day 53 (2026-11-25): a job interview
+# Tone notes: 面试 miànshì 4-4, 简历 jiǎnlì 3-4, 经验 jīngyàn 1-4, 紧张 jǐnzhāng 3-1, 准备 zhǔnbèi 3-4, 自我介绍 zìwǒ jièshào 4-3-4-4, 优点 yōudiǎn 1-3, 工资 gōngzī 1-1. Patterns 一个 yí ge (一 sandhi); 别 + verb; 准备好了; 把…发给我. Signature: 我准备好了！ Audio made with Google TTS zh-CN. Example-only extras (not headwords): 明天 míngtiān, 上午 shàngwǔ, 一个 yí ge, 请 qǐng, 把 bǎ, 发给 fā gěi, 工作 gōngzuò, 别 bié, 慢慢 mànmàn, 说 shuō, 好了 hǎo le, 先 xiān, 做 zuò, 什么 shénme, 怎么样 zěnmeyàng.
+面试	miànshì	job interview; to interview
+简历	jiǎnlì	résumé, CV
+经验	jīngyàn	experience
+紧张	jǐnzhāng	nervous
+准备	zhǔnbèi	to prepare, get ready
+自我介绍	zìwǒ jièshào	to introduce yourself
+优点	yōudiǎn	strength, good point
+工资	gōngzī	salary, pay
