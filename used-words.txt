@@ -591,3 +591,14 @@
 自我介绍	zìwǒ jièshào	to introduce yourself
 优点	yōudiǎn	strength, good point
 工资	gōngzī	salary, pay
+
+# Day 54 (2026-11-26): hiking in the mountains
+# Tone notes: 徒步 túbù 2-4, 背包 bēibāo 1-1, 地图 dìtú 4-2, 小路 xiǎolù 3-4, 迷路 mílù 2-4, 瀑布 pùbù 4-4, 风景 fēngjǐng 1-3, 山顶 shāndǐng 1-3. Patterns 去 + verb + 吧; 带…了吗; 这条 (条 measure for long things); 终于到…了. Signature: 我们终于到山顶了！ Audio made with Google TTS zh-CN (Edge TTS 403). Example-only extras (not headwords): 我们 wǒmen, 周末 zhōumò, 去 qù, 吧 ba, 里 li, 水 shuǐ, 和 hé, 面包 miànbāo, 带 dài, 这条 zhè tiáo, 窄 zhǎi, 要 yào, 小心 xiǎoxīn, 别 bié, 担心 dānxīn, 没有 méiyǒu, 看 kàn, 那边 nàbiān, 一个 yí ge, 这里 zhèlǐ, 真 zhēn, 美 měi, 终于 zhōngyú, 到 dào.
+徒步	túbù	to hike, go hiking
+背包	bēibāo	backpack
+地图	dìtú	map
+小路	xiǎolù	trail, path
+迷路	mílù	to get lost
+瀑布	pùbù	waterfall
+风景	fēngjǐng	scenery, view
+山顶	shāndǐng	mountaintop, summit
