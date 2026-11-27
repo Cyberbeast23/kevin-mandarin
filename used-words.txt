@@ -602,3 +602,14 @@
 瀑布	pùbù	waterfall
 风景	fēngjǐng	scenery, view
 山顶	shāndǐng	mountaintop, summit
+
+# Day 55 (2026-11-27): Black Friday shopping
+# Tone notes: 打折 dǎzhé 3-2, 优惠 yōuhuì 1-4, 排队 páiduì 2-4, 网购 wǎnggòu 3-4, 下单 xiàdān 4-1, 付款 fùkuǎn 4-3, 质量 zhìliàng 4-4, 退货 tuìhuò 4-4. Patterns 所有的…都; 只有今天; 在 + verb (in progress); 已经…了; 用 + tool + verb; …的话. Signature: 我已经下单了！ Audio made with Google TTS zh-CN. Example-only extras (not headwords): 今天 jīntiān, 所有 suǒyǒu, 衣服 yīfu, 都 dōu, 这个 zhège, 只有 zhǐyǒu, 商店 shāngdiàn, 门口 ménkǒu, 很多 hěn duō, 在 zài, 不想 bù xiǎng, 在家 zài jiā, 已经 yǐjīng, 可以 kěyǐ, 用 yòng, 手机 shǒujī, 便宜 piányi, 但是 dànshì, 合适 héshì, 的话 de huà.
+打折	dǎzhé	to be on sale, give a discount
+优惠	yōuhuì	deal, special offer
+排队	páiduì	to line up, wait in line
+网购	wǎnggòu	to shop online
+下单	xiàdān	to place an order
+付款	fùkuǎn	to pay
+质量	zhìliàng	quality
+退货	tuìhuò	to return (an item)
